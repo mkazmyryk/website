@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml"
+>
+<head>
+    <title>Welcome</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: slategray;
+        }
+
+        .welcome-image {
+            background-image: url("/images/welcome.jpg");
+            background-color: #cccccc;
+            height: 700px;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+        }
+
+        .center {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 18px;
+        }
+
+        .top {
+            position: absolute;
+            top: 10%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: Calibri;
+            text-shadow: 3px 2px #4CAF50;
+        }
+
+        .bot {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: Calibri;
+            text-shadow: 3px 2px #4CAF50;
+        }
+
+        a {
+            background-color: #4CAF50;
+            color: white;
+            padding: 1em 1.5em;
+            text-decoration: none;
+            cursor: pointer;
+            opacity: 0.9;
+        }
+
+        a:hover {
+            opacity: 1;
+        }
+
+
+    </style>
+</head>
+<body class="welcome-image">
+<div class="top">
+    <h1>Welcome to TOPGAMES</h1>
+</div>
+<div class="center">
+    <a th:href="@{/hello}">Enter</a>
+</div>
+<div class="bot">
+    <h4>&copy; 2018 MKazmyryk. All rights reserved.</h4>
+</div>
+</body>
+</html>
