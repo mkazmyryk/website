@@ -11,12 +11,11 @@
 
         .welcome-image {
             background-image: url("/images/welcome.jpg");
-            background-color: #cccccc;
+            background-color: slategray;
             height: 700px;
             background-position: center;
             background-repeat: no-repeat;
             background-size: cover;
-            position: relative;
         }
 
         .center {
@@ -33,16 +32,18 @@
             left: 50%;
             transform: translate(-50%, -50%);
             font-family: Calibri;
-            text-shadow: 3px 2px #4CAF50;
+            color: greenyellow;
+            text-shadow: 3px 2px black;
         }
 
         .bot {
             position: absolute;
-            bottom: 0;
+            bottom: 0%;
             left: 50%;
             transform: translate(-50%, -50%);
             font-family: Calibri;
-            text-shadow: 3px 2px #4CAF50;
+            color: greenyellow;
+            text-shadow: 3px 2px black;
         }
 
         a {
@@ -69,7 +70,7 @@
     <a th:href="@{/hello}">Enter</a>
 </div>
 <div class="bot">
-    <h4>&copy; 2018 MKazmyryk. All rights reserved.</h4>
+    <h3>&copy; <b th:text="${#dates.year(#dates.createNow())}"></b> MKazmyryk. All rights reserved.</h3>
 </div>
 </body>
 </html>
