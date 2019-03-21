@@ -24,17 +24,20 @@ input[type=text], input[type=password] {
     display: inline-block;
     border: none;
     background: #f1f1f1;
+    border-radius: 10px;
 }
 
 input[type=text]:focus, input[type=password]:focus {
     background-color: #ddd;
     outline: none;
+    border-radius: 10px;
 }
 
 /* Overwrite default styles of hr */
 hr {
     border: 1px solid #f1f1f1;
     margin-bottom: 25px;
+    border-radius: 10px;
 }
 
 /* Set a style for the submit button */
@@ -47,6 +50,7 @@ hr {
     cursor: pointer;
     width: 100%;
     opacity: 0.9;
+    border-radius: 10px;
 }
 
 .registerbtn:hover {

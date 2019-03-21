@@ -4,29 +4,27 @@
 
 body {
     font-family: "Helvetica";
-    padding: 10px;
     background: #dddddd;
+    margin: 0px;
 }
 
 /* Header/Blog Title */
 .header {
-    padding: 30px;
     text-align: left;
-    color: black;
-    background: linear-gradient(to right, lightblue, midnightblue);
-    text-shadow: 2px 1px lavender;
-    font-family: "Palatino Linotype";
-    margin-bottom: 5px;
+    color: white;
+    background: #001a33;
+    font-family: "Comic Sans MS";
+    padding: 20px;
 }
 
 .header h1 {
-    font-size: 50px;
+    font-size: 35px;
 }
 
 /* Style the top navigation bar */
 .topnav {
     overflow: hidden;
-    background-color: #333;
+    background-color: #00284d;
 }
 
 /* Style the topnav links */
@@ -41,7 +39,7 @@ body {
 
 /* Change color on hover */
 .topnav a:hover {
-    background-color: midnightblue;
+    background-color: #004f99;
     color: white;
 }
 
@@ -54,23 +52,23 @@ body {
 
 /* Right column */
 .rightcolumn {
-    float: left;
+    float: right;
     width: 15%;
-    padding-left: 20px;
 }
 
 /* Fake image */
 .fakeimg {
-    background-color: #aaa;
+    background-color: whitesmoke;
     width: 100%;
     padding: 20px;
 }
 
 /* Add a card effect for articles */
 .card {
-    background-color: white;
+    background-color: #cce6ff;
     padding: 20px;
-    margin-top: 20px;
+    margin: 20px;
+    border-radius: 10px;
 }
 
 /* Clear floats after the columns */
@@ -82,10 +80,11 @@ body {
 
 /* Footer */
 .footer {
-    padding: 20px;
     text-align: center;
-    background: linear-gradient(to right, lightblue, midnightblue);
-    margin-top: 20px;
+    background: #001a33;
+    height: 150px;
+    padding: 10px;
+    color: white;
 }
 
 /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
@@ -102,4 +101,21 @@ body {
         float: none;
         width: 100%;
     }
+}
+
+.account {
+    background-color: #cce6ff;
+    color: black;
+    padding: 10px;
+    margin: 20px;
+    border-radius: 10px;
+}
+
+.accbgr {
+    background-color: whitesmoke;
+    height: 120px;
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
 }

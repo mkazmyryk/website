@@ -15,6 +15,7 @@
     <a href="#">Home</a>
     <a href="#">Best games</a>
     <a href="#">Coming soon</a>
+    <a href="#">Find</a>
     <a href="#" style="float:right">About</a>
 </div>
 
@@ -40,15 +41,16 @@
         </div>
     </div>
     <div class="rightcolumn">
-        <div class="card">
-            <h2>Your Account</h2>
-            <div class="fakeimg" style="height:120px;">
-                <p th:inline="text">Hello <b>[[${#httpServletRequest.remoteUser}]]!</b></p>
+        <div class="account">
+            <p><b>Your Account</b></p>
+            <div class="accbgr">
+                <p th:inline="text">Hello <a href="/account"><b>[[${#httpServletRequest.remoteUser}]]</b></a>
+                </p></a>
                 <form method="post" th:action="@{/logout}">
                     <input type="submit" value="Sign Out"/>
                 </form>
             </div>
-            <p>Some text about me in culpa qui officia deserunt mollit anim..</p>
+            <p>Please click on your nickname for additional information</p>
         </div>
         <div class="card">
             <h3>Popular Post</h3>
