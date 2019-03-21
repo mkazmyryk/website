@@ -5,7 +5,7 @@
     <title>Welcome</title>
     <style>
         body {
-            font-family: Arial, Helvetica, sans-serif;
+            font-family: "Helvetica";
             height: 100%;
         }
 
@@ -27,12 +27,12 @@
 
         .top {
             position: absolute;
-            top: 10%;
+            top: 20%;
             left: 50%;
             transform: translate(-50%, -50%);
-            font-family: Calibri;
             color: black;
-            text-shadow: 3px 2px white;
+            text-shadow: 2px 1px lavender;
+            font-family: "Palatino Linotype";
         }
 
         .bot {
@@ -40,9 +40,8 @@
             bottom: 0%;
             left: 50%;
             transform: translate(-50%, -50%);
-            font-family: Calibri;
             color: black;
-            text-shadow: 3px 2px white;
+            text-shadow: 2px 1px lavender;
         }
 
         a {
@@ -58,6 +57,10 @@
             opacity: 1;
         }
 
+        h1 {
+            font-size: 70px;
+        }
+
 
     </style>
 </head>
@@ -69,7 +72,7 @@
     <a th:href="@{/feed}">Enter</a>
 </div>
 <div class="bot">
-    <h3>&copy; <b th:text="${#dates.year(#dates.createNow())}"></b> MKazmyryk. All rights reserved.</h3>
+    <h4>&copy; <b th:text="${#dates.year(#dates.createNow())}"></b> MKazmyryk. All rights reserved.</h4>
 </div>
 </body>
 </html>

@@ -3,7 +3,7 @@
 }
 
 body {
-    font-family: Arial;
+    font-family: "Helvetica";
     padding: 10px;
     background: #dddddd;
 }
@@ -14,7 +14,9 @@ body {
     text-align: left;
     color: black;
     background: linear-gradient(to right, lightblue, midnightblue);
-    text-shadow: 2px 1px whitesmoke;
+    text-shadow: 2px 1px lavender;
+    font-family: "Palatino Linotype";
+    margin-bottom: 5px;
 }
 
 .header h1 {
@@ -39,22 +41,21 @@ body {
 
 /* Change color on hover */
 .topnav a:hover {
-    background-color: lightblue;
-    color: black;
+    background-color: midnightblue;
+    color: white;
 }
 
 /* Create two unequal columns that floats next to each other */
 /* Left column */
 .leftcolumn {
     float: left;
-    width: 75%;
+    width: 85%;
 }
 
 /* Right column */
 .rightcolumn {
     float: left;
-    width: 25%;
-    background-color: #f1f1f1;
+    width: 15%;
     padding-left: 20px;
 }
 

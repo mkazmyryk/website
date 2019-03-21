@@ -41,9 +41,9 @@
     </div>
     <div class="rightcolumn">
         <div class="card">
-            <h2>About Me</h2>
-            <div class="fakeimg" style="height:100px;">
-                <h5 th:inline="text">Hello [[${#httpServletRequest.remoteUser}]]!</h5>
+            <h2>Your Account</h2>
+            <div class="fakeimg" style="height:120px;">
+                <p th:inline="text">Hello <b>[[${#httpServletRequest.remoteUser}]]!</b></p>
                 <form method="post" th:action="@{/logout}">
                     <input type="submit" value="Sign Out"/>
                 </form>
