@@ -23,7 +23,7 @@
         <form method="post" th:action="@{/add}" th:object="${game}">
             <p>Title: <input th:field="*{title}" type="text"/></p>
             <p>Description:</p>
-            <textarea cols="200" rows="10" th:field="*{description}">Description</textarea>
+            <textarea rows="15" th:field="*{description}">Description</textarea>
             <p>Release Date: </p>
             <input th:field="*{releaseDate}" type="date"/>
             <p>Genre:</p>
