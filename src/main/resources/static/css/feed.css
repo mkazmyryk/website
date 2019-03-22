@@ -14,7 +14,7 @@ body {
     color: white;
     background: #001a33;
     font-family: SansSerif;
-    padding: 15px;
+    padding: 10px;
 }
 
 .header h1 {
@@ -33,13 +33,13 @@ body {
     display: block;
     color: white;
     text-align: center;
-    padding: 14px 16px;
+    padding: 8px 10px;
     text-decoration: none;
 }
 
 /* Change color on hover */
 .topnav a:hover {
-    background-color: #004f99;
+    background-color: red;
     color: white;
     border-radius: 10px;
 }
@@ -82,7 +82,7 @@ body {
 
 /* Footer */
 .footer {
-    margin-top: 100px;
+    margin-top: 20px;
     padding: 30px;
     text-align: center;
     background: #001a33;
@@ -111,7 +111,7 @@ body {
     color: black;
     padding: 8px;
     position: absolute;
-    top: 20px;
+    top: 10px;
     right: 5px;
     width: 200px;
 }
