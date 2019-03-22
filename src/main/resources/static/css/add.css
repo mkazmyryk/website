@@ -1,0 +1,20 @@
+/* Full-width input fields */
+input[type=text], input[type=password], textarea, input[type=date], select {
+    width: 100%;
+    box-sizing: border-box;
+    border: 2px solid lightblue;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-position: 3px 3px;
+    background-repeat: no-repeat;
+    padding: 12px 10px 12px 10px;
+}
+
+.page {
+    background-color: whitesmoke;
+    width: 100%;
+    padding: 20px;
+    border-radius: 20px;
+    text-align: center;
+}

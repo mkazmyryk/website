@@ -2,10 +2,7 @@ package com.mkaz.website.entity;
 
 import lombok.Data;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 /**
  * Simple POJO class for game representation.
@@ -24,6 +21,7 @@ public class Game {
     @GeneratedValue
     private Long id;
     private String title;
+    @Column(columnDefinition = "TEXT")
     private String description;
     private String releaseDate;
     private String genre;

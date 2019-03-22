@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Topgames</title>
+    <link rel="stylesheet" th:href="@{/css/feed.css}"/>
+    <link rel="stylesheet" th:href="@{/css/add.css}"/>
+</head>
+<body>
+<div th:insert="/feed.html :: div.header"></div>
+
+<div th:insert="/feed.html :: div.topnav"></div>
+
+<div class="topnav" style="background-color: brown">
+    <a href="/add">Add</a>
+    <a href="#">Delete</a>
+</div>
+
+<div class="card">
+    <h2>Adding game</h2>
+
+    <div class="page">
+
+        <form method="post" th:action="@{/add}" th:object="${game}">
+            <p>Title: <input th:field="*{title}" type="text"/></p>
+            <p>Description:</p>
+            <textarea cols="200" rows="10" th:field="*{description}">Description</textarea>
+            <p>Release Date: </p>
+            <input th:field="*{releaseDate}" type="date"/>
+            <p>Genre:</p>
+            <select th:field="*{genre}">
+                <option value="Action">Action</option>
+                <option value="RPG">RPG</option>
+                <option value="Racing">Racing</option>
+                <option value="MMO">MMO</option>
+            </select>
+            <p>Platform:</p>
+            <select th:field="*{platform}">
+                <option value="PC">PC</option>
+                <option value="PS4">PS4</option>
+                <option value="XBOX">XBOX</option>
+                <option value="Mobile">Mobile</option>
+            </select>
+            <p style="text-align: center"><input type="submit" value="Add"/> <input type="reset" value="Reset"/></p>
+        </form>
+
+    </div>
+
+</div>
+
+
+<div th:insert="/feed.html :: div.footer"></div>
+
+</body>
+</html>
