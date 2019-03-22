@@ -1,9 +1,7 @@
 body {
     font-family: "Helvetica";
     background-color: #dddddd;
-    width: 450px;
-    margin: auto;
-    text-align: center;
+    margin: 0;
 }
 
 * {
@@ -14,6 +12,12 @@ body {
 .container {
     padding: 16px;
     background-color: white;
+    width: 450px;
+    text-align: center;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
 }
 
 /* Full-width input fields */
@@ -64,6 +68,7 @@ a {
 
 /* Set a grey background color and center the text of the "sign in" section */
 .signin {
-    background-color: #f1f1f1;
+    background-color: white;
     text-align: center;
+
 }
