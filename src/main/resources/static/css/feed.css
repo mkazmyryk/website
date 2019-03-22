@@ -5,7 +5,7 @@
 body {
     font-family: "Helvetica";
     background: #dddddd;
-    margin: 0px;
+    margin: 0;
 }
 
 /* Header/Blog Title */
@@ -41,6 +41,7 @@ body {
 .topnav a:hover {
     background-color: #004f99;
     color: white;
+    border-radius: 10px;
 }
 
 /* Create two unequal columns that floats next to each other */
@@ -68,7 +69,7 @@ body {
     background-color: #cce6ff;
     padding: 20px;
     margin: 20px;
-    border-radius: 10px;
+    border-radius: 20px;
 }
 
 /* Clear floats after the columns */
@@ -80,11 +81,12 @@ body {
 
 /* Footer */
 .footer {
+    margin-top: 100px;
+    padding: 30px;
     text-align: center;
     background: #001a33;
-    height: 150px;
-    padding: 10px;
     color: white;
+    height: 200px;
 }
 
 /* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
