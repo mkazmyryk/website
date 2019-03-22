@@ -6,9 +6,19 @@
 </head>
 <body>
 
+
 <div class="header">
-    <h1>TOPGAMES</h1>
-    <p>Most powerful information about games in one place!</p>
+    <h1>TOPGAMES </h1>
+    <div class="account">
+        <div class="accbgr">
+            <p th:inline="text">Hello <a href="/account"><b>[[${#httpServletRequest.remoteUser}]]</b></a>
+            </p></a>
+            <form method="post" th:action="@{/logout}">
+                <input type="submit" value="Sign Out"/>
+            </form>
+        </div>
+    </div>
+    <span>Most powerful information about games in one place!</span>
 </div>
 
 <div class="topnav">
@@ -27,8 +37,10 @@
             <h5>Title description, Dec 7, 2017</h5>
             <div class="fakeimg" style="height:200px;">Image</div>
             <p>Some text..</p>
-            <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+            <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do
+                eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                exercitation
                 ullamco.</p>
         </div>
         <div class="card">
@@ -36,23 +48,15 @@
             <h5>Title description, Sep 2, 2017</h5>
             <div class="fakeimg" style="height:200px;">Image</div>
             <p>Some text..</p>
-            <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+            <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do
+                eiusmod
+                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+                exercitation
                 ullamco.</p>
         </div>
     </div>
     <div class="rightcolumn">
-        <div class="account">
-            <p><b>Your Account</b></p>
-            <div class="accbgr">
-                <p th:inline="text">Hello <a href="/account"><b>[[${#httpServletRequest.remoteUser}]]</b></a>
-                </p></a>
-                <form method="post" th:action="@{/logout}">
-                    <input type="submit" value="Sign Out"/>
-                </form>
-            </div>
-            <p>Please click on your nickname for additional information</p>
-        </div>
+
         <div class="card">
             <h3>Popular Post</h3>
             <div class="fakeimg"><p>Image</p></div>
