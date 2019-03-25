@@ -4,17 +4,10 @@ input[type=text], input[type=password], textarea, input[type=date], select {
     box-sizing: border-box;
     border: 2px solid lightblue;
     border-radius: 4px;
-    font-size: 16px;
+    font-size: 13px;
     background-color: white;
     background-position: 3px 3px;
     background-repeat: no-repeat;
-    padding: 12px 10px 12px 10px;
+    padding: 8px 7px 8px 7px;
 }
 
-.page {
-    background-color: whitesmoke;
-    width: 100%;
-    padding: 20px;
-    border-radius: 20px;
-    text-align: center;
-}

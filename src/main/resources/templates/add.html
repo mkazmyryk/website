@@ -10,43 +10,47 @@
 
 <div th:insert="/feed.html :: div.topnav"></div>
 
-<div class="topnav" style="background-color: brown">
-    <a href="/add">Add</a>
-    <a href="#">Delete</a>
-</div>
+<div class="content">
+    <div class="card">
+        <h2 style="padding: 10px">Adding game</h2>
 
-<div class="card">
-    <h2>Adding game</h2>
+        <div class="inside">
 
-    <div class="page">
+            <form method="post" th:action="@{/add}" th:object="${game}">
+                <label>Title:
+                    <input th:field="*{title}" type="text"/>
+                </label>
+                <label>Description:
+                    <textarea rows="15" th:field="*{description}">Description</textarea>
+                </label>
+                <label>Release Date:
+                    <input th:field="*{releaseDate}" type="date"/>
+                </label>
+                <label>Genre:
+                    <select th:field="*{genre}">
+                        <option value="Action">Action</option>
+                        <option value="RPG">RPG</option>
+                        <option value="Racing">Racing</option>
+                        <option value="MMO">MMO</option>
+                    </select>
+                </label>
+                <label>Platform:
+                    <select th:field="*{platform}">
+                        <option value="PC">PC</option>
+                        <option value="PS4">PS4</option>
+                        <option value="XBOX">XBOX</option>
+                        <option value="Mobile">Mobile</option>
+                    </select>
+                </label>
+                <p style="text-align: center; padding: 10px">
+                    <input type="submit" value="Add"/> <input type="reset" value="Reset"/>
+                </p>
+            </form>
 
-        <form method="post" th:action="@{/add}" th:object="${game}">
-            <p>Title: <input th:field="*{title}" type="text"/></p>
-            <p>Description:</p>
-            <textarea rows="15" th:field="*{description}">Description</textarea>
-            <p>Release Date: </p>
-            <input th:field="*{releaseDate}" type="date"/>
-            <p>Genre:</p>
-            <select th:field="*{genre}">
-                <option value="Action">Action</option>
-                <option value="RPG">RPG</option>
-                <option value="Racing">Racing</option>
-                <option value="MMO">MMO</option>
-            </select>
-            <p>Platform:</p>
-            <select th:field="*{platform}">
-                <option value="PC">PC</option>
-                <option value="PS4">PS4</option>
-                <option value="XBOX">XBOX</option>
-                <option value="Mobile">Mobile</option>
-            </select>
-            <p style="text-align: center"><input type="submit" value="Add"/> <input type="reset" value="Reset"/></p>
-        </form>
+        </div>
 
     </div>
-
 </div>
-
 
 <div th:insert="/feed.html :: div.footer"></div>
 
