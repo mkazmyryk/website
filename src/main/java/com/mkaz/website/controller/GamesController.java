@@ -48,7 +48,7 @@ public class GamesController {
 
     @PostMapping("/review")
     public String addReview(Review review, HttpServletRequest request, String title) {
-        review.setDate(LocalDateTime.now().toString());
+        review.setDate(LocalDateTime.now());
         review.setUser(userRepository.findUserByUserName(request.getRemoteUser()));
         Game game = gamesRepository.findByTitle(title);
         game.addReview(review);

@@ -3,6 +3,9 @@ package com.mkaz.website.entity;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.format.FormatStyle;
 
 @Data
 @Entity
@@ -14,7 +17,12 @@ public class Review {
     @Column(columnDefinition = "TEXT")
     private String text;
     private Double rating;
-    private String date;
+    private LocalDateTime date;
     @OneToOne
     private User user;
+
+    public String getFormattedDate() {
+        return date.format(DateTimeFormatter.ofLocalizedDateTime(FormatStyle.SHORT));
+    }
+
 }

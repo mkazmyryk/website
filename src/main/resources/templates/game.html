@@ -5,6 +5,7 @@
     <title th:text="${game.title}">Title</title>
     <link rel="stylesheet" th:href="@{/css/feed.css}"/>
     <link rel="stylesheet" th:href="@{/css/game.css}"/>
+    <link rel="stylesheet" th:href="@{/css/list.css}"/>
 </head>
 <body>
 
@@ -17,11 +18,39 @@
     <div class="card">
 
         <h3 style="padding: 5px" th:text="${game.title}"></h3>
+        <img src="/images/001.jpg"/>
+        <iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
+                frameborder="0"
+                height="350" src="https://www.youtube.com/embed/kWnzRGD9NDE"
+                width="600"></iframe>
+
         <div class="rating">
             <h1 th:text="${#numbers.formatDecimal(game.getAverageRating(),1,1,'POINT')}"></h1>
         </div>
         <h5 style="padding: 5px" th:text="${game.releaseDate}"></h5>
         <div class="inside" th:text="${game.description}"></div>
+
+    </div>
+
+    <div class="card">
+        <h3>Reviews:</h3>
+
+        <div class="inside">
+            <table id="customers">
+                <tr>
+                    <th>User</th>
+                    <th>Review</th>
+                    <th>Rating</th>
+                    <th>Date</th>
+                </tr>
+                <tr th:each="review:${reviews}">
+                    <td th:text="${review.user.getUserName()}"></td>
+                    <td th:text="${review.text}"></td>
+                    <td th:text="${review.rating}"></td>
+                    <td th:text="${review.getFormattedDate()}"></td>
+                </tr>
+            </table>
+        </div>
 
     </div>
 
