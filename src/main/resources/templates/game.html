@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title th:text="${game.title}">Title</title>
     <link rel="stylesheet" th:href="@{/css/feed.css}"/>
+    <link rel="stylesheet" th:href="@{/css/game.css}"/>
 </head>
 <body>
 
@@ -16,9 +17,20 @@
     <div class="card">
 
         <h3 style="padding: 5px" th:text="${game.title}"></h3>
+        <div class="rating">
+            <h1 th:text="${game.getAverageRating()}"></h1>
+        </div>
         <h5 style="padding: 5px" th:text="${game.releaseDate}"></h5>
         <div class="inside" th:text="${game.description}"></div>
 
+    </div>
+
+    <div class="card">
+        <div class="inside">
+            <form th:action="@{/game/review/}">
+                <input type="submit" value="AddReview">
+            </form>
+        </div>
     </div>
 
 </div>
