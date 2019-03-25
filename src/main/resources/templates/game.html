@@ -18,7 +18,7 @@
 
         <h3 style="padding: 5px" th:text="${game.title}"></h3>
         <div class="rating">
-            <h1 th:text="${game.getAverageRating()}"></h1>
+            <h1 th:text="${#numbers.formatDecimal(game.getAverageRating(),1,1,'POINT')}"></h1>
         </div>
         <h5 style="padding: 5px" th:text="${game.releaseDate}"></h5>
         <div class="inside" th:text="${game.description}"></div>
@@ -27,7 +27,8 @@
 
     <div class="card">
         <div class="inside">
-            <form th:action="@{/game/review/}">
+            <form method="get" th:action="@{/review}">
+                <input th:attr="name='title'" th:value="${game.title}" type="hidden">
                 <input type="submit" value="AddReview">
             </form>
         </div>

@@ -12,22 +12,9 @@ public class Review {
     @GeneratedValue
     private Long id;
     @Column(columnDefinition = "TEXT")
-    private String review;
+    private String text;
     private Double rating;
+    private String date;
     @OneToOne
     private User user;
-
-    @Override
-    public String toString() {
-        return "Review{" +
-                "id=" + id +
-                ", review='" + review + '\'' +
-                ", rating=" + rating +
-                ", user=" + user +
-                '}';
-    }
-
-    public Double getRating() {
-        return rating;
-    }
 }

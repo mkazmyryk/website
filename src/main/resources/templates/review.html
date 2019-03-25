@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/2005/Atom">
+<head>
+    <meta charset="UTF-8">
+    <title>New review</title>
+    <link rel="stylesheet" th:href="@{/css/feed.css}"/>
+    <link rel="stylesheet" th:href="@{/css/add.css}"/>
+</head>
+<body>
+<div th:insert="/feed.html :: div.header"></div>
+
+<div th:insert="/feed.html :: div.topnav"></div>
+
+<div class="content">
+
+    <div class="card">
+        <h2 style="padding: 10px">Adding review</h2>
+
+        <div class="inside">
+
+            <form method="post" style="text-align: center" th:action="@{/review}" th:object="${review}">
+                <label>
+                    <input max="10" min="0" name="points" th:field="${review.rating}" type="range">
+                </label><br>
+                <label>Review:
+                    <textarea rows="15" th:field="${review.text}"></textarea>
+                </label>
+                <input th:attr="name='title'" th:value="${title}" type="hidden">
+                <p style="text-align: center; padding: 10px">
+                    <input type="submit" value="Add"/> <input type="reset" value="Reset"/>
+                </p>
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+<div th:insert="/feed.html :: div.footer"></div>
+
+</body>
+</html>
