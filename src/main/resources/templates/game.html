@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/2005/Atom">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${game.title}">Title</title>
+    <link rel="stylesheet" th:href="@{/css/feed.css}"/>
+</head>
+<body>
+
+<div th:insert="/feed.html :: div.header"></div>
+
+<div th:insert="/feed.html :: div.topnav"></div>
+
+<div class="content">
+
+    <div class="card">
+
+        <h3 style="padding: 5px" th:text="${game.title}"></h3>
+        <h5 style="padding: 5px" th:text="${game.releaseDate}"></h5>
+        <div class="inside" th:text="${game.description}"></div>
+
+    </div>
+
+</div>
+
+<div th:insert="/feed.html :: div.footer"></div>
+
+</body>
+</html>

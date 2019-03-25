@@ -42,7 +42,7 @@
 
     <div class="card" th:each="game: ${games}">
 
-        <h3 style="padding: 5px" th:text="${game.title}"></h3>
+        <a th:href="@{/game/} + ${game.title}"><h3 style="padding: 5px" th:text="${game.title}"></h3></a>
         <h5 style="padding: 5px" th:text="${game.releaseDate}"></h5>
         <div class="inside" th:text="${game.description}"></div>
 
