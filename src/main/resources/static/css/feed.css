@@ -89,6 +89,18 @@ body {
     top: 5px;
 }
 
+.account a:link {
+    text-decoration: none;
+}
+
+.account a:visited {
+    color: black;
+}
+
+.account a:hover {
+    color: red;
+}
+
 .links {
     background-color: whitesmoke;
     border-radius: 10px;
@@ -99,4 +111,17 @@ body {
     background-color: whitesmoke;
     padding: 10px;
     border-radius: 4px;
+}
+
+.content a:visited {
+    color: black;
+}
+
+.content a:link {
+    color: black;
+    text-decoration: none;
+}
+
+.content a:hover {
+    color: red;
 }
