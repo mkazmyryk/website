@@ -1,11 +1,25 @@
 * {
-    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body,
+.wrapper {
+    height: 100%;
 }
 
 body {
-    font-family: "Helvetica";
+    font-family: "Helvetica", serif;
     background: #dddddd;
-    margin: 0;
+}
+
+.content {
+    box-sizing: border-box;
+    min-height: 80%;
+    width: 90%;
+    margin: auto;
+    padding-bottom: 100px;
 }
 
 /* Header/Blog Title */
@@ -13,8 +27,8 @@ body {
     text-align: left;
     color: white;
     background: #001a33;
-    font-family: SansSerif;
-    padding: 10px;
+    font-family: SansSerif, serif;
+    padding: 20px;
 }
 
 .header h1 {
@@ -44,88 +58,45 @@ body {
     border-radius: 10px;
 }
 
-/* Create two unequal columns that floats next to each other */
-/* Left column */
-.leftcolumn {
-    float: left;
-    width: 85%;
-}
-
-/* Right column */
-.rightcolumn {
-    float: right;
-    width: 15%;
-}
-
-/* Fake image */
-.fakeimg {
-    background-color: whitesmoke;
-    width: 100%;
-    padding: 20px;
-    border-radius: 10px;
-}
-
 /* Add a card effect for articles */
 .card {
     background-color: #cce6ff;
-    padding: 20px;
-    margin: 20px;
-    border-radius: 20px;
+    padding: 15px;
+    margin: 10px;
+    border-radius: 4px;
 }
 
-/* Clear floats after the columns */
-.row:after {
-    content: "";
-    display: table;
-    clear: both;
-}
 
 /* Footer */
 .footer {
-    margin-top: 20px;
     padding: 30px;
     text-align: center;
     background: #001a33;
     color: white;
-    height: 200px;
-}
-
-/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 800px) {
-    .leftcolumn, .rightcolumn {
-        width: 100%;
-        padding: 0;
-    }
-}
-
-/* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other */
-@media screen and (max-width: 700px) {
-    .topnav a {
-        float: none;
-        width: 100%;
-    }
+    height: 100px;
+    margin-top: -100px;
 }
 
 .account {
-    background-color: #001a33;
-    color: black;
-    padding: 8px;
-    position: absolute;
-    top: 10px;
-    right: 5px;
-    width: 200px;
-}
-
-.accbgr {
     background-color: whitesmoke;
-    width: 100%;
-    padding: 10px;
     border-radius: 10px;
     text-align: center;
+    color: black;
+    padding: 10px;
+    width: 150px;
+    position: absolute;
+    right: 5px;
+    top: 5px;
 }
 
 .links {
     background-color: whitesmoke;
     border-radius: 10px;
     padding: 5px;
+}
+
+.inside {
+    background-color: whitesmoke;
+    padding: 10px;
+    border-radius: 4px;
 }
