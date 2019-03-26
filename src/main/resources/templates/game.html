@@ -16,16 +16,22 @@
 <div class="content">
 
     <div class="card">
-
-        <h3 style="padding: 5px" th:text="${game.title}"></h3>
-        <img src="/images/001.jpg"/>
-        <iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen
-                frameborder="0"
-                height="350" src="https://www.youtube.com/embed/kWnzRGD9NDE"
-                width="600"></iframe>
-
-        <div class="rating">
-            <h1 th:text="${#numbers.formatDecimal(game.getAverageRating(),1,1,'POINT')}"></h1>
+        <div id="title">
+            <h3 style="padding: 10px" th:text="${game.title}"></h3>
+            <div id="logo">
+                <img alt="logo" th:src="@{/images/001.jpg}"/>
+            </div>
+            <div class="rating">
+                <h1 th:text="${#numbers.formatDecimal(game.getAverageRating(),1,1,'POINT')}"></h1>
+            </div>
+        </div>
+        <div id="videoinf">
+            <span><b>Watch trailer:</b></span>
+            <div id="video">
+                <iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen frameborder="0" src="https://www.youtube.com/embed/kWnzRGD9NDE"
+                ></iframe>
+            </div>
         </div>
         <h5 style="padding: 5px" th:text="${game.releaseDate}"></h5>
         <div class="inside" th:text="${game.description}"></div>
