@@ -44,9 +44,4 @@ public class AdminController {
         return "redirect:/admin";
     }
 
-//    public File multipartToFile(MultipartFile multipart) throws IllegalStateException, IOException {
-//        File convFile = new File(multipart.getOriginalFilename());
-//        multipart.transferTo(convFile);
-//        return convFile;
-//    }
 }
