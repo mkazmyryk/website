@@ -7,6 +7,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.MultipartFile;
 
 @Controller
 public class AdminController {
@@ -20,7 +22,8 @@ public class AdminController {
     }
 
     @PostMapping("/add")
-    public String addGame(Game game) {
+    public String addGame(@RequestParam("game") Game game, @RequestParam("logo") MultipartFile file) {
+
         gamesRepository.save(game);
         return "redirect:/admin";
     }

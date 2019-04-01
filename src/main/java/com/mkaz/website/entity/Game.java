@@ -28,6 +28,9 @@ public class Game {
     private String releaseDate;
     private String genre;
     private String platform;
+    private String videoLink;
+    private String imageLink;
+
     @OneToMany
     private List<Review> reviews = new ArrayList<>();
 

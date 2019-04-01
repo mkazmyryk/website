@@ -16,10 +16,16 @@
 
         <div class="inside">
 
-            <form method="post" th:action="@{/add}" th:object="${game}">
+            <form enctype="multipart/form-data" method="post" th:action="@{/add}" th:object="${game}">
                 <label>Title:
                     <input th:field="*{title}" type="text"/>
                 </label>
+                <label>Video link:
+                    <input th:field="*{videoLink}" type="text"/>
+                </label>
+                <label style=>Logo:
+                    <input name="logo" style="margin: 8px" type="file"/>
+                </label><br>
                 <label>Description:
                     <textarea rows="15" th:field="*{description}">Description</textarea>
                 </label>
