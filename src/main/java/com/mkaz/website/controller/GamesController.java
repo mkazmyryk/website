@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 import javax.servlet.http.HttpServletRequest;
 import java.time.LocalDateTime;
-import java.util.List;
 import java.util.NoSuchElementException;
 
 @Controller
@@ -31,8 +30,7 @@ public class GamesController {
         Game game = gamesRepository.findByTitle(gameTitle);
         if (game != null) {
             model.addAttribute("game", game);
-            List<Review> reviews = reviewsRepository.findAll();
-            model.addAttribute("reviews", reviews);
+            model.addAttribute("reviews", game.getReviews());
         } else {
             throw new NoSuchElementException();
         }

@@ -19,7 +19,7 @@
         <div id="title">
             <h3 style="padding: 10px" th:text="${game.title}"></h3>
             <div id="logo">
-                <img alt="logo" th:src="@{/images/001.jpg}"/>
+                <img alt="logo" th:src="${game.imageLink}"/>
             </div>
             <div class="rating">
                 <h1 th:text="${#numbers.formatDecimal(game.getAverageRating(),1,1,'POINT')}"></h1>
