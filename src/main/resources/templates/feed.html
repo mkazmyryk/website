@@ -48,6 +48,14 @@
 
     </div>
 
+    <div class="card" th:if="${pageNumbers.size() > 0}">
+        <div class="inside" style="text-align: center">
+            <a style="margin: 5px"
+               th:each="pageNumber : ${pageNumbers}" th:href="@{/feed(page=${pageNumber})}"
+               th:text=${pageNumber}></a>
+        </div>
+    </div>
+
 </div>
 
 <div class="footer">
