@@ -40,6 +40,7 @@ public class AdminController {
             e.printStackTrace();
         }
         game.setImageLink("/images/" + file.getOriginalFilename());
+        game.setAvrRating(0.0);
         gamesRepository.save(game);
         return "redirect:/admin";
     }

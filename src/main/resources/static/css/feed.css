@@ -134,3 +134,7 @@ body {
 .content a:hover {
     color: red;
 }
+
+.pageNumbers {
+    margin: 12px;
+}

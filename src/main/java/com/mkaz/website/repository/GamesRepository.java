@@ -12,4 +12,5 @@ public interface GamesRepository extends JpaRepository<Game, Long> {
     Page<Game> findAll(Pageable pageable);
 
     Game findByTitle(String title);
+
 }

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/2005/Atom">
+<head>
+    <meta charset="UTF-8">
+    <title>Best games</title>
+    <link rel="stylesheet" th:href="@{/css/feed.css}"/>
+    <link rel="stylesheet" th:href="@{/css/list.css}"/>
+</head>
+<body>
+
+<div th:insert="/feed.html :: div.header"></div>
+
+<div th:insert="/feed.html :: div.topnav"></div>
+
+<div class="content">
+
+    <div class="card">
+        <h3>Reviews:</h3>
+
+        <div class="inside">
+            <table id="customers">
+                <tr>
+                    <th>Title</th>
+                    <th>Genre</th>
+                    <th>Platform</th>
+                    <th>Rating</th>
+                </tr>
+                <tr th:each="game:${games}">
+                    <td><a th:href="@{/game/} + ${game.title}"><h4 th:text="${game.title}"></h4></a></td>
+                    <td th:text="${game.genre}"></td>
+                    <td th:text="${game.platform}"></td>
+                    <td th:text="${game.avrRating}"></td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+
+    <div class="pageNumbers" th:if="${#ctx.containsVariable('pageNumbers')}">
+        <div class="inside" style="text-align: center">
+            <a style="margin: 5px"
+               th:each="pageNumber : ${pageNumbers}" th:href="@{/best(page=${pageNumber})}"
+               th:text=${pageNumber}></a>
+        </div>
+    </div>
+
+</div>
+
+<div th:insert="/feed.html :: div.footer"></div>
+
+</body>
+</html>

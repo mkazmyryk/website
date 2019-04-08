@@ -31,7 +31,7 @@
 <div class="topnav">
 
     <a href="/feed">Home</a>
-    <a href="#">Best games</a>
+    <a href="/best">Best games</a>
     <a href="#">Coming soon</a>
     <a href="#">Find</a>
     <a href="#" style="float:right">About</a>
@@ -48,7 +48,7 @@
 
     </div>
 
-    <div class="card" th:if="${pageNumbers.size() > 0}">
+    <div class="pageNumbers" th:if="${#ctx.containsVariable('pageNumbers')}">
         <div class="inside" style="text-align: center">
             <a style="margin: 5px"
                th:each="pageNumber : ${pageNumbers}" th:href="@{/feed(page=${pageNumber})}"

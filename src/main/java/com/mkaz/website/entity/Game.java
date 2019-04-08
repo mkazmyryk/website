@@ -30,23 +30,26 @@ public class Game {
     private String platform;
     private String videoLink;
     private String imageLink;
+    private Double avrRating;
 
     @OneToMany
     private List<Review> reviews = new ArrayList<>();
 
     public Double getAverageRating() {
-        Double sum = 0.0;
-        if (reviews.size() == 0) {
-            return 0.0;
-        }
-        for (Review tempReview : reviews) {
-            sum += tempReview.getRating();
-        }
-        return sum / reviews.size();
+        return avrRating;
     }
 
     public void addReview(Review review) {
         reviews.add(review);
+        Double sum = 0.0;
+        if (reviews.size() == 0) {
+            avrRating = 0.0;
+        } else {
+            for (Review tempReview : reviews) {
+                sum += tempReview.getRating();
+            }
+            avrRating = sum / reviews.size();
+        }
     }
 
     @Override

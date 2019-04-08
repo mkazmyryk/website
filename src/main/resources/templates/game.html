@@ -22,7 +22,7 @@
                 <img alt="logo" th:src="${game.imageLink}"/>
             </div>
             <div class="rating">
-                <h1 th:text="${#numbers.formatDecimal(game.getAverageRating(),1,1,'POINT')}"></h1>
+                <h1 th:text="${#numbers.formatDecimal(game.avrRating,1,1,'POINT')}"></h1>
             </div>
         </div>
         <div id="videoinf">
