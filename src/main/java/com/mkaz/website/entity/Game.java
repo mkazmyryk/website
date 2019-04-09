@@ -26,8 +26,12 @@ public class Game {
     @Column(columnDefinition = "TEXT")
     private String description;
     private String releaseDate;
-    private String genre;
-    private String platform;
+    @Enumerated(EnumType.STRING)
+    @Column(length = 20)
+    private Genre genre;
+    @Enumerated(EnumType.STRING)
+    @Column(length = 20)
+    private Platform platform;
     private String videoLink;
     private String imageLink;
     private Double avrRating;

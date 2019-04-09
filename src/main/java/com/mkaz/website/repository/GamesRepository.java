@@ -13,4 +13,10 @@ public interface GamesRepository extends JpaRepository<Game, Long> {
 
     Game findByTitle(String title);
 
+    Page<Game> findAllByGenre(String genre, Pageable pageable);
+
+    Page<Game> findAllByPlatform(String platform, Pageable pageable);
+
+    Page<Game> findAllByPlatformAndGenre(String platform, String genre, Pageable pageable);
+
 }

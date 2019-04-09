@@ -9,6 +9,7 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
@@ -20,7 +21,6 @@ import java.util.stream.IntStream;
 public class MainController {
     private GamesRepository gamesRepository;
     private int totalPages;
-    private List<Integer> pageNumbers;
     private Page<Game> games;
     private int currentPage;
     private int pageSize;
@@ -39,18 +39,14 @@ public class MainController {
         pageSize = size.orElse(5);
 
         games = gamesRepository.findAll(PageRequest.of(currentPage - 1, pageSize));
+
         model.addAttribute("games", games);
 
-        totalPages = ((int) (gamesRepository.count() / pageSize)) + 1;
-
+        totalPages = countPages(gamesRepository, pageSize);
 
         if (totalPages > 1) {
-            pageNumbers = IntStream.rangeClosed(1, totalPages)
-                    .boxed()
-                    .collect(Collectors.toList());
-            model.addAttribute("pageNumbers", pageNumbers);
+            model.addAttribute("pageNumbers", getPageNumbers(totalPages));
         }
-
         return "feed";
     }
 
@@ -60,20 +56,80 @@ public class MainController {
 
         currentPage = page.orElse(1);
         pageSize = size.orElse(10);
-        totalPages = ((int) (gamesRepository.count() / pageSize)) + 1;
 
         games = gamesRepository.findAll(PageRequest.of(currentPage - 1, pageSize, Sort.by("avrRating")
                 .descending()));
 
         model.addAttribute("games", games);
 
+        totalPages = countPages(gamesRepository, pageSize);
+
         if (totalPages > 1) {
-            pageNumbers = IntStream.rangeClosed(1, totalPages)
-                    .boxed()
-                    .collect(Collectors.toList());
-            model.addAttribute("pageNumbers", pageNumbers);
+            model.addAttribute("pageNumbers", getPageNumbers(totalPages));
         }
         return "best";
     }
 
+    @PostMapping("/best")
+    public String sortedBestGames(Model model, @RequestParam("page") Optional<Integer> page,
+                                  @RequestParam("size") Optional<Integer> size, String byTitle, String byDate,
+                                  String genre, String platform) {
+        currentPage = page.orElse(1);
+        pageSize = size.orElse(10);
+
+        totalPages = countPages(gamesRepository, pageSize);
+
+        if (genre.equals("all") && platform.equals("all")) {
+            if (byDate == null && byTitle != null) {
+                games = gamesRepository.findAll(PageRequest.of(currentPage - 1, pageSize, Sort.by("avrRating")
+                        .descending().and(Sort.by("title"))));
+            } else {
+                if (byDate != null && byTitle == null) {
+                    games = gamesRepository.findAll(PageRequest.of(currentPage - 1, pageSize,
+                            Sort.by("avrRating")
+                                    .descending().and(Sort.by("releaseDate"))));
+                } else {
+                    games = gamesRepository.findAll(PageRequest.of(currentPage - 1, pageSize,
+                            Sort.by("avrRating")
+                                    .descending().and(Sort.by("title")).and(Sort.by("releaseDate"))));
+                }
+            }
+        } else {
+            if (platform.equals("all")) {
+                games = gamesRepository.findAllByGenre(genre, PageRequest.of(currentPage - 1, pageSize,
+                        Sort.by("avrRating")
+                                .descending()));
+            } else {
+                if (genre.equals("all")) {
+                    games = gamesRepository.findAllByPlatform(platform, PageRequest.of(currentPage - 1, pageSize,
+                            Sort.by("avrRating")
+                                    .descending()));
+                } else {
+                    games = gamesRepository.findAllByPlatformAndGenre(platform, genre,
+                            PageRequest.of(currentPage - 1, pageSize,
+                                    Sort.by("avrRating")
+                                            .descending()));
+                }
+            }
+        }
+
+
+        model.addAttribute("games", games);
+
+        if (totalPages > 1) {
+            model.addAttribute("pageNumbers", getPageNumbers(totalPages));
+        }
+
+        return "best";
+    }
+
+    private List<Integer> getPageNumbers(int size) {
+        return IntStream.rangeClosed(1, size)
+                .boxed()
+                .collect(Collectors.toList());
+    }
+
+    private int countPages(GamesRepository gamesRepository, int pageSize) {
+        return ((int) (gamesRepository.count() / pageSize)) + 1;
+    }
 }

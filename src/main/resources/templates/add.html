@@ -34,18 +34,13 @@
                 </label>
                 <label>Genre:
                     <select th:field="*{genre}">
-                        <option value="Action">Action</option>
-                        <option value="RPG">RPG</option>
-                        <option value="Racing">Racing</option>
-                        <option value="MMO">MMO</option>
+                        <option th:each="genre: ${genres}" th:text="${genre}" th:value="${genre}"></option>
                     </select>
                 </label>
                 <label>Platform:
                     <select th:field="*{platform}">
-                        <option value="PC">PC</option>
-                        <option value="PS4">PS4</option>
-                        <option value="XBOX">XBOX</option>
-                        <option value="Mobile">Mobile</option>
+                        <option th:each="platform: ${platforms}" th:text="${platform}"
+                                th:value="${platform}"></option>
                     </select>
                 </label>
                 <p style="text-align: center; padding: 10px">
