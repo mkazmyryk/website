@@ -1,6 +1,8 @@
 package com.mkaz.website.repository;
 
 import com.mkaz.website.entity.Game;
+import com.mkaz.website.entity.Genre;
+import com.mkaz.website.entity.Platform;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -13,10 +15,10 @@ public interface GamesRepository extends JpaRepository<Game, Long> {
 
     Game findByTitle(String title);
 
-    Page<Game> findAllByGenre(String genre, Pageable pageable);
+    Page<Game> findAllByGenre(Genre genre, Pageable pageable);
 
-    Page<Game> findAllByPlatform(String platform, Pageable pageable);
+    Page<Game> findAllByPlatform(Platform platform, Pageable pageable);
 
-    Page<Game> findAllByPlatformAndGenre(String platform, String genre, Pageable pageable);
+    Page<Game> findAllByGenreAndPlatform(Genre genre, Platform platform, Pageable pageable);
 
 }

@@ -7,6 +7,7 @@ import com.mkaz.website.repository.GamesRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -76,48 +77,18 @@ public class MainController {
 
     @PostMapping("/best")
     public String sortedBestGames(Model model, @RequestParam("page") Optional<Integer> page,
-                                  @RequestParam("size") Optional<Integer> size, String byTitle, String byDate,
-                                  String genre, String platform) {
+                                  @RequestParam("size") Optional<Integer> size,
+                                  Genre genre, Platform platform) {
         currentPage = page.orElse(1);
         pageSize = size.orElse(10);
 
         totalPages = countPages(gamesRepository, pageSize);
 
-        if (genre.equals("all") && platform.equals("all")) {
-            if (byDate == null && byTitle != null) {
-                games = gamesRepository.findAll(PageRequest.of(currentPage - 1, pageSize, Sort.by("avrRating")
-                        .descending().and(Sort.by("title"))));
-            } else {
-                if (byDate != null && byTitle == null) {
-                    games = gamesRepository.findAll(PageRequest.of(currentPage - 1, pageSize,
-                            Sort.by("avrRating")
-                                    .descending().and(Sort.by("releaseDate"))));
-                } else {
-                    games = gamesRepository.findAll(PageRequest.of(currentPage - 1, pageSize,
-                            Sort.by("avrRating")
-                                    .descending().and(Sort.by("title")).and(Sort.by("releaseDate"))));
-                }
-            }
-        } else {
-            if (platform.equals("all")) {
-                games = gamesRepository.findAllByGenre(genre, PageRequest.of(currentPage - 1, pageSize,
-                        Sort.by("avrRating")
-                                .descending()));
-            } else {
-                if (genre.equals("all")) {
-                    games = gamesRepository.findAllByPlatform(platform, PageRequest.of(currentPage - 1, pageSize,
-                            Sort.by("avrRating")
-                                    .descending()));
-                } else {
-                    games = gamesRepository.findAllByPlatformAndGenre(platform, genre,
-                            PageRequest.of(currentPage - 1, pageSize,
-                                    Sort.by("avrRating")
-                                            .descending()));
-                }
-            }
-        }
+        games = getFilteredGames(genre, platform,
+                PageRequest.of(currentPage - 1, pageSize));
 
-
+        model.addAttribute("platforms", Platform.values());
+        model.addAttribute("genres", Genre.values());
         model.addAttribute("games", games);
 
         if (totalPages > 1) {
@@ -135,5 +106,16 @@ public class MainController {
 
     private int countPages(GamesRepository gamesRepository, int pageSize) {
         return ((int) (gamesRepository.count() / pageSize)) + 1;
+    }
+
+    private Page<Game> getFilteredGames(Genre genre, Platform platform, Pageable pageable) {
+        if (!genre.equals(Genre.ALL) && !platform.equals(Platform.ALL)) {
+            return gamesRepository.findAllByGenreAndPlatform(genre, platform, pageable);
+        }
+        if (!genre.equals(Genre.ALL)) {
+            return gamesRepository.findAllByGenre(genre, pageable);
+        } else {
+            return gamesRepository.findAllByPlatform(platform, pageable);
+        }
     }
 }
