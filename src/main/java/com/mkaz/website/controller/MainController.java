@@ -1,6 +1,8 @@
 package com.mkaz.website.controller;
 
 import com.mkaz.website.entity.Game;
+import com.mkaz.website.entity.Genre;
+import com.mkaz.website.entity.Platform;
 import com.mkaz.website.repository.GamesRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -60,6 +62,8 @@ public class MainController {
         games = gamesRepository.findAll(PageRequest.of(currentPage - 1, pageSize, Sort.by("avrRating")
                 .descending()));
 
+        model.addAttribute("platforms", Platform.values());
+        model.addAttribute("genres", Genre.values());
         model.addAttribute("games", games);
 
         totalPages = countPages(gamesRepository, pageSize);

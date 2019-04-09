@@ -23,19 +23,14 @@
             <span><b>Filter by:</b></span>
             <label> Genre:
                 <select name="genre">
-                    <option selected value="all">All</option>
-                    <option value="Action">Action</option>
-                    <option value="RPG">RPG</option>
-                    <option value="Racing">Racing</option>
+                    <option th:each="genre: ${genres}" th:text="${genre}" th:value="${genre}"></option>
                 </select>
             </label>
 
             <label> Platform:
                 <select name="platform">
-                    <option selected value="all">All</option>
-                    <option value="PC">PC</option>
-                    <option value="PS4">PS4</option>
-                    <option value="XBOX">XBOX</option>
+                    <option th:each="platform: ${platforms}" th:text="${platform}"
+                            th:value="${platform}"></option>
                 </select>
             </label>
 
