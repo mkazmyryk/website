@@ -5,6 +5,7 @@
 
     <title>Topgames</title>
     <link rel="stylesheet" th:href="@{/css/feed.css}"/>
+    <link rel="stylesheet" th:href="@{/css/game.css}"/>
 
 </head>
 
@@ -32,7 +33,7 @@
 
     <a href="/feed">Home</a>
     <a href="/best">Best games</a>
-    <a href="#">Coming soon</a>
+    <a href="/soon">Coming soon</a>
     <a href="#">Find</a>
     <a href="#" style="float:right">About</a>
     <a href="/admin" style="float:right">Admin</a>
@@ -42,9 +43,18 @@
 
     <div class="card" th:each="game: ${games}">
 
-        <a th:href="@{/game/} + ${game.title}"><h3 style="padding: 5px" th:text="${game.title}"></h3></a>
-        <h5 style="padding: 5px" th:text="${game.releaseDate}"></h5>
-        <div class="inside" th:text="${game.description}"></div>
+        <a th:href="@{/game/} + ${game.title}"><h3 th:text="${game.title}"></h3></a>
+        <div id="title" style="margin: 5px">
+            <div id="logo">
+                <img alt="logo" th:src="${game.imageLink}"/>
+            </div>
+            <div class="rating">
+                <h1 th:text="${#numbers.formatDecimal(game.avrRating,1,1,'POINT')}"></h1>
+            </div>
+        </div>
+        <span style="margin: 5px"><b>Release Date:</b></span>
+        <span style="padding: 5px" th:text="${game.releaseDate}"></span>
+        <div class="inside" style="margin: 5px" th:text="${game.description}"></div>
 
     </div>
 
@@ -61,10 +71,10 @@
 <div class="footer">
 
     <div class="links">
-        <a href="#">Temp</a>
-        <a href="#">Temp</a>
-        <a href="#">Temp</a>
-        <a href="#">Temp</a>
+        <a href="/feed">Home</a>
+        <a href="/best">Best</a>
+        <a href="/soon">Coming</a>
+        <a href="#">Find</a>
     </div>
 
     <h5 style="padding: 20px">&copy; <b th:text="${#dates.year(#dates.createNow())}"></b> MKazmyryk. All rights
