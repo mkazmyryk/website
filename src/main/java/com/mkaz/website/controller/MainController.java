@@ -115,7 +115,10 @@ public class MainController {
         if (!genre.equals(Genre.ALL)) {
             return gamesRepository.findAllByGenre(genre, pageable);
         } else {
-            return gamesRepository.findAllByPlatform(platform, pageable);
+            if (!platform.equals(Platform.ALL)) {
+                return gamesRepository.findAllByPlatform(platform, pageable);
+            }
+            return gamesRepository.findAll(pageable);
         }
     }
 }
