@@ -21,4 +21,6 @@ public interface GamesRepository extends JpaRepository<Game, Long> {
 
     Page<Game> findAllByGenreAndPlatform(Genre genre, Platform platform, Pageable pageable);
 
+    Page<Game> findAllByReleaseDateAfter(String date, Pageable pageable);
+
 }

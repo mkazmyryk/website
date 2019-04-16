@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -96,6 +97,29 @@ public class MainController {
         }
 
         return "best";
+    }
+
+    @GetMapping("/soon")
+    public String soonGames(Model model, @RequestParam("page") Optional<Integer> page,
+                            @RequestParam("size") Optional<Integer> size) {
+        currentPage = page.orElse(1);
+        pageSize = size.orElse(10);
+
+        String curDate = LocalDate.now().toString();
+
+        games = gamesRepository.findAllByReleaseDateAfter(curDate,
+                PageRequest.of(currentPage - 1, pageSize));
+
+        model.addAttribute("platforms", Platform.values());
+        model.addAttribute("genres", Genre.values());
+        model.addAttribute("games", games);
+
+        totalPages = countPages(gamesRepository, pageSize);
+
+        if (totalPages > 1) {
+            model.addAttribute("pageNumbers", getPageNumbers(totalPages));
+        }
+        return "soon";
     }
 
     private List<Integer> getPageNumbers(int size) {
