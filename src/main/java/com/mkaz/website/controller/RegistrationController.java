@@ -13,10 +13,14 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 public class RegistrationController {
 
+    private final UserRepository userRepository;
+    private final RolesRepository rolesRepository;
+
     @Autowired
-    private UserRepository userRepository;
-    @Autowired
-    private RolesRepository rolesRepository;
+    public RegistrationController(UserRepository userRepository, RolesRepository rolesRepository) {
+        this.userRepository = userRepository;
+        this.rolesRepository = rolesRepository;
+    }
 
     @GetMapping("/registration")
     public String registration() {

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/2005/Atom">
+<head>
+    <meta charset="UTF-8">
+    <title>Find</title>
+    <link rel="stylesheet" th:href="@{/css/feed.css}"/>
+    <link rel="stylesheet" th:href="@{/css/list.css}"/>
+    <link rel="stylesheet" th:href="@{/css/add.css}"/>
+</head>
+<body>
+
+<div th:insert="/feed.html :: div.header"></div>
+
+<div th:insert="/feed.html :: div.topnav"></div>
+
+<div class="content">
+    <div class="card">
+        <form method="post" style="margin: 5px" th:action="@{/best}">
+            <span><b>Filter by:</b></span>
+            <label> Genre:
+                <select name="genre">
+                    <option th:each="genre: ${genres}" th:text="${genre}" th:value="${genre}"></option>
+                </select>
+            </label>
+
+            <label> Platform:
+                <select name="platform">
+                    <option th:each="platform: ${platforms}" th:text="${platform}"
+                            th:value="${platform}"></option>
+                </select>
+            </label>
+
+            <input type="submit" value="Find">
+        </form>
+        <span><b>Enter title</b></span>
+        <div class="inside">
+            <form method="post" th:action="@{/search}">
+                <input type="text">
+                <input type="submit" value="Find">
+            </form>
+        </div>
+    </div>
+</div>
+
+<div th:insert="/feed.html :: div.footer"></div>
+
+</body>
+</html>

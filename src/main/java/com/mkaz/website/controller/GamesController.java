@@ -18,12 +18,16 @@ import java.util.NoSuchElementException;
 
 @Controller
 public class GamesController {
+    private final GamesRepository gamesRepository;
+    private final ReviewsRepository reviewsRepository;
+    private final UserRepository userRepository;
+
     @Autowired
-    private GamesRepository gamesRepository;
-    @Autowired
-    private ReviewsRepository reviewsRepository;
-    @Autowired
-    private UserRepository userRepository;
+    public GamesController(GamesRepository gamesRepository, ReviewsRepository reviewsRepository, UserRepository userRepository) {
+        this.gamesRepository = gamesRepository;
+        this.reviewsRepository = reviewsRepository;
+        this.userRepository = userRepository;
+    }
 
     @GetMapping(value = "/game/{gameTitle}")
     public String gameInfo(@PathVariable String gameTitle, Model model) {

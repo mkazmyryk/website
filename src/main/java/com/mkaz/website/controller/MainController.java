@@ -39,6 +39,7 @@ public class MainController {
     public String gamesForFeed(Model model,
                                @RequestParam("page") Optional<Integer> page,
                                @RequestParam("size") Optional<Integer> size) {
+
         currentPage = page.orElse(1);
         pageSize = size.orElse(5);
 
@@ -51,6 +52,7 @@ public class MainController {
         if (totalPages > 1) {
             model.addAttribute("pageNumbers", getPageNumbers(totalPages));
         }
+
         return "feed";
     }
 
@@ -120,6 +122,47 @@ public class MainController {
             model.addAttribute("pageNumbers", getPageNumbers(totalPages));
         }
         return "soon";
+    }
+
+    @GetMapping("/search")
+    public String findGamesGet(Model model, @RequestParam("page") Optional<Integer> page,
+                               @RequestParam("size") Optional<Integer> size) {
+        currentPage = page.orElse(1);
+        pageSize = size.orElse(10);
+
+        model.addAttribute("platforms", Platform.values());
+        model.addAttribute("genres", Genre.values());
+        model.addAttribute("games", games);
+
+        totalPages = countPages(gamesRepository, pageSize);
+
+        if (totalPages > 1) {
+            model.addAttribute("pageNumbers", getPageNumbers(totalPages));
+        }
+        return "search";
+    }
+
+
+    @PostMapping("/search")
+    public String findGames(Model model, @RequestParam("page") Optional<Integer> page,
+                            @RequestParam("size") Optional<Integer> size, @RequestParam("title") String title) {
+        currentPage = page.orElse(1);
+        pageSize = size.orElse(10);
+
+        games = gamesRepository.findAllByTitle(title,
+                PageRequest.of(currentPage - 1, pageSize));
+
+        model.addAttribute("platforms", Platform.values());
+        model.addAttribute("genres", Genre.values());
+        model.addAttribute("games", games);
+
+        totalPages = countPages(gamesRepository, pageSize);
+
+        if (totalPages > 1) {
+            model.addAttribute("pageNumbers", getPageNumbers(totalPages));
+        }
+
+        return "search";
     }
 
     private List<Integer> getPageNumbers(int size) {
