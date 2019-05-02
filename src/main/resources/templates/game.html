@@ -22,14 +22,7 @@
                 <div id="logo">
                     <img alt="logo" th:src="${game.imageLink}"/>
                 </div>
-                <div class="rating" style="background-color: red" th:if="${game.avrRating} < 5"
-                     th:text="${#numbers.formatDecimal(game.avrRating,1,1,'POINT')}">
-                </div>
-                <div class="rating" style="background-color: #eaec00"
-                     th:if="${game.avrRating} < 8 and ${game.avrRating} > 5 "
-                     th:text="${#numbers.formatDecimal(game.avrRating,1,1,'POINT')}">
-                </div>
-                <div class="rating" style="background-color: lawngreen" th:if="${game.avrRating} > 8"
+                <div class="rating" th:style="'background-color:'+${game.getColor()}"
                      th:text="${#numbers.formatDecimal(game.avrRating,1,1,'POINT')}">
                 </div>
             </div>
@@ -62,7 +55,7 @@
                 <tr th:each="review:${reviews}">
                     <td th:text="${review.user.getUserName()}"></td>
                     <td th:text="${review.text}"></td>
-                    <td th:text="${review.rating}"></td>
+                    <td th:style="'background-color:'+${review.getColor()}" th:text="${review.rating}"></td>
                     <td th:text="${review.getFormattedDate()}"></td>
                 </tr>
             </table>

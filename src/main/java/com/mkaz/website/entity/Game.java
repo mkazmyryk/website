@@ -56,6 +56,15 @@ public class Game {
         }
     }
 
+    public String getColor() {
+        if (avrRating <= 5) {
+            return "red";
+        } else {
+            if (avrRating > 5 && avrRating <= 8) return "#eaec00";
+        }
+        return "lawngreen";
+    }
+
     @Override
     public String toString() {
         return "Game{" +

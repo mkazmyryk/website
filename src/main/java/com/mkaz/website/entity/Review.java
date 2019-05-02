@@ -25,4 +25,12 @@ public class Review {
         return date.format(DateTimeFormatter.ofLocalizedDateTime(FormatStyle.SHORT));
     }
 
+    public String getColor() {
+        if (rating <= 5) {
+            return "red";
+        } else {
+            if (rating > 5 && rating <= 8) return "#eaec00";
+        }
+        return "lawngreen";
+    }
 }
