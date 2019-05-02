@@ -75,7 +75,7 @@ public class MainController {
         if (totalPages > 1) {
             model.addAttribute("pageNumbers", getPageNumbers(totalPages));
         }
-        return "best";
+        return "best.html";
     }
 
     @PostMapping("/best")
