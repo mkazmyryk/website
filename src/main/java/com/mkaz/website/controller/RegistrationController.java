@@ -36,8 +36,16 @@ public class RegistrationController {
         user.setPassword(new BCryptPasswordEncoder().encode(user.getPassword()));
         user.setEnabled(true);
         Role role = rolesRepository.findByName("ROLE_ADMIN");
-        user.getRoles().add(role);
-        role.getUsers().add(user);
+        if (role != null) {
+            user.getRoles().add(role);
+            role.getUsers().add(user);
+        } else {
+            role = new Role();
+            role.setName("ROLE_ADMIN");
+            role.getUsers().add(user);
+            user.getRoles().add(role);
+        }
+        rolesRepository.save(role);
         userRepository.save(user);
         return "redirect:/login";
     }
