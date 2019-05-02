@@ -6,9 +6,8 @@
     border-radius: 4px;
     width: 80px;
     display: inline-block;
-    vertical-align: top;
-    float: right;
-    margin: 30px;
+    horiz-align: right;
+
 }
 
 #logo {
@@ -24,10 +23,7 @@
 }
 
 #title {
-    background-color: whitesmoke;
-    border-radius: 4px;
     display: inline-block;
-    width: 100%;
 }
 
 #video {
