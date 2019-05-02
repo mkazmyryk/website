@@ -45,7 +45,7 @@
 
         <a th:href="@{/game/} + ${game.title}"><h3 th:text="${game.title}"></h3></a>
         <div class="inside">
-            <div th:insert="/game.html :: div.title"></div>
+            <div th:insert="game :: div.title"></div>
         </div>
         <span style="margin: 5px"><b>Release Date:</b></span>
         <span style="padding: 5px" th:text="${game.releaseDate}"></span>

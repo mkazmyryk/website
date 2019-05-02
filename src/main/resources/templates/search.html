@@ -8,9 +8,9 @@
 </head>
 <body>
 
-<div th:insert="/feed.html :: div.header"></div>
+<div th:insert="feed :: div.header"></div>
 
-<div th:insert="/feed.html :: div.topnav"></div>
+<div th:insert="feed :: div.topnav"></div>
 
 <div class="content">
     <div class="card">
@@ -32,12 +32,12 @@
             <input type="submit" value="Find">
         </form>
         <div class="inside">
-            <div th:insert="/best.html :: div.list"></div>
+            <div th:insert="best :: div.list"></div>
         </div>
     </div>
 </div>
 
-<div th:insert="/feed.html :: div.footer"></div>
+<div th:insert="feed :: div.footer"></div>
 
 </body>
 </html>
