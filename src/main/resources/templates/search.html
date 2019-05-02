@@ -15,26 +15,22 @@
 
 <div class="content">
     <div class="card">
-        <form method="post" style="margin: 5px" th:action="@{/best}">
-            <span><b>Filter by:</b></span>
-            <label> Genre:
-                <select name="genre">
-                    <option th:each="genre: ${genres}" th:text="${genre}" th:value="${genre}"></option>
-                </select>
-            </label>
-
-            <label> Platform:
-                <select name="platform">
-                    <option th:each="platform: ${platforms}" th:text="${platform}"
-                            th:value="${platform}"></option>
-                </select>
-            </label>
-
-            <input type="submit" value="Find">
-        </form>
-        <span><b>Enter title</b></span>
         <div class="inside">
-            <form method="post" th:action="@{/search}">
+            <form method="post" style="margin: 5px" th:action="@{/search}">
+                <span><b>Filter by:</b><br></span>
+                <label> Genre:
+                    <select name="genre">
+                        <option th:each="genre: ${genres}" th:text="${genre}" th:value="${genre}"></option>
+                    </select>
+                </label>
+
+                <label> Platform:
+                    <select name="platform">
+                        <option th:each="platform: ${platforms}" th:text="${platform}"
+                                th:value="${platform}"></option>
+                    </select>
+                </label>
+                <span><b>Enter title</b></span>
                 <input name="title" type="text">
                 <input type="submit" value="Find">
             </form>
