@@ -11,7 +11,7 @@ body,
 
 body {
     font-family: "Helvetica", serif;
-    background: whitesmoke;
+    background: #dddddd;
 }
 
 .content {
@@ -26,7 +26,7 @@ body {
 .header {
     text-align: left;
     color: white;
-    background: #001a33;
+    background: #adbabb;
     font-family: SansSerif, serif;
     padding: 20px;
 }
@@ -42,13 +42,13 @@ body {
 
 .header h1 {
     font-size: 35px;
-    color: #e1fffc;
+    color: white;
 }
 
 /* Style the top navigation bar */
 .topnav {
     overflow: hidden;
-    background-color: #00284d;
+    background-color: #879495;
 }
 
 /* Style the topnav links */
@@ -63,13 +63,13 @@ body {
 
 /* Change color on hover */
 .topnav a:hover {
-    background-color: red;
-    color: white;
+    background-color: greenyellow;
+    color: black;
 }
 
 /* Add a card effect for articles */
 .card {
-    background-color: #c2d1d8;
+    background-color: white;
     padding: 15px;
     margin: 10px;
     border-radius: 5px;
@@ -80,14 +80,14 @@ body {
 .footer {
     padding: 30px;
     text-align: center;
-    background: #001a33;
+    background: #adbabb;
     color: white;
     height: 120px;
     margin-top: -100px;
 }
 
 #account {
-    background-color: whitesmoke;
+    background-color: white;
     border-radius: 5px;
     text-align: center;
     color: black;
@@ -108,7 +108,7 @@ body {
 }
 
 #account a:hover {
-    color: red;
+    color: greenyellow;
 }
 
 input[type=submit] {
@@ -133,7 +133,7 @@ input[type=submit]:hover {
 }
 
 .inside {
-    background-color: whitesmoke;
+    background-color: #f1f1f1;
     padding: 10px;
     margin: 5px;
 }
