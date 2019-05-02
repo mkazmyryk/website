@@ -5,7 +5,6 @@
     <title>Find</title>
     <link rel="stylesheet" th:href="@{/css/feed.css}"/>
     <link rel="stylesheet" th:href="@{/css/list.css}"/>
-    <link rel="stylesheet" th:href="@{/css/add.css}"/>
 </head>
 <body>
 
@@ -15,25 +14,24 @@
 
 <div class="content">
     <div class="card">
+        <h3 style="margin: 5px"><b>Filter by:</b><br></h3>
+        <form method="post" th:action="@{/search}">
+            <label> Genre:
+                <select name="genre">
+                    <option th:each="genre: ${genres}" th:text="${genre}" th:value="${genre}"></option>
+                </select>
+            </label>
+            <label> Platform:
+                <select name="platform">
+                    <option th:each="platform: ${platforms}" th:text="${platform}"
+                            th:value="${platform}"></option>
+                </select>
+            </label>
+            <span><b>Enter title</b></span>
+            <input name="title" type="text">
+            <input type="submit" value="Find">
+        </form>
         <div class="inside">
-            <form method="post" style="margin: 5px" th:action="@{/search}">
-                <span><b>Filter by:</b><br></span>
-                <label> Genre:
-                    <select name="genre">
-                        <option th:each="genre: ${genres}" th:text="${genre}" th:value="${genre}"></option>
-                    </select>
-                </label>
-
-                <label> Platform:
-                    <select name="platform">
-                        <option th:each="platform: ${platforms}" th:text="${platform}"
-                                th:value="${platform}"></option>
-                    </select>
-                </label>
-                <span><b>Enter title</b></span>
-                <input name="title" type="text">
-                <input type="submit" value="Find">
-            </form>
             <div th:insert="/best.html :: div.list"></div>
         </div>
     </div>
