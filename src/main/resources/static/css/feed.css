@@ -85,7 +85,7 @@ body {
     margin-top: -100px;
 }
 
-.account {
+#account {
     background-color: whitesmoke;
     border-radius: 5px;
     text-align: center;
@@ -97,17 +97,32 @@ body {
     top: 6px;
 }
 
-.account a:link {
+#account a:link {
     text-decoration: none;
     color: black;
 }
 
-.account a:visited {
+#account a:visited {
     color: black;
 }
 
-.account a:hover {
+#account a:hover {
     color: red;
+}
+
+input[type=submit] {
+    background-color: midnightblue;
+    color: white;
+    padding: 2px 15px;
+    border: none;
+    cursor: pointer;
+    opacity: 0.9;
+    border-radius: 10px;
+}
+
+input[type=submit]:hover {
+    opacity: 1;
+    background-color: red;
 }
 
 .links {

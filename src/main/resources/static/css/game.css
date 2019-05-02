@@ -1,13 +1,14 @@
+
 .rating {
-    background-color: lawngreen;
     color: white;
     padding: 10px;
     text-align: center;
-    border-radius: 4px;
+    border-radius: 10px;
     width: 80px;
     display: inline-block;
-    horiz-align: right;
-
+    float: right;
+    margin: 15px;
+    font: bold 25px SansSerif;
 }
 
 #logo {
@@ -22,8 +23,9 @@
     padding: 3px;
 }
 
-#title {
+.title {
     display: inline-block;
+    width: 100%;
 }
 
 #video {
@@ -35,9 +37,5 @@
 }
 
 #videoinf {
-    background-color: whitesmoke;
-    margin: 10px 1px;
-    border-radius: 4px;
-    padding: 10px;
-    text-align: center;
+    margin: 5px;
 }

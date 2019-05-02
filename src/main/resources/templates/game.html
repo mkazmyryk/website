@@ -17,27 +17,35 @@
 
     <div class="card">
         <div class="inside">
-            <div id="title">
-                <h3 style="padding: 10px" th:text="${game.title}"></h3>
+            <h3 style="padding: 10px" th:text="${game.title}"></h3>
+            <div class="title">
                 <div id="logo">
                     <img alt="logo" th:src="${game.imageLink}"/>
                 </div>
-                <div class="rating">
-                    <h1 th:text="${#numbers.formatDecimal(game.avrRating,1,1,'POINT')}"></h1>
+                <div class="rating" style="background-color: red" th:if="${game.avrRating} < 5"
+                     th:text="${#numbers.formatDecimal(game.avrRating,1,1,'POINT')}">
+                </div>
+                <div class="rating" style="background-color: #eaec00"
+                     th:if="${game.avrRating} < 8 and ${game.avrRating} > 5 "
+                     th:text="${#numbers.formatDecimal(game.avrRating,1,1,'POINT')}">
+                </div>
+                <div class="rating" style="background-color: lawngreen" th:if="${game.avrRating} > 8"
+                     th:text="${#numbers.formatDecimal(game.avrRating,1,1,'POINT')}">
                 </div>
             </div>
-        </div>
-        <div id="videoinf">
-            <span><b>Watch trailer:</b></span>
-            <div id="video">
-                <iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen frameborder="0" th:src="${game.videoLink}"
-                ></iframe>
+            <span><b>Release date:</b></span>
+            <span style="padding: 5px" th:text="${game.releaseDate}"></span>
+            <div id="videoinf">
+                <span><b>Watch trailer:</b></span>
+                <div id="video">
+                    <iframe allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                            allowfullscreen frameborder="0" th:src="${game.videoLink}"
+                    ></iframe>
+                </div>
             </div>
+            <span style="margin: 5px"><b>Description:</b></span>
+            <div style="margin: 5px" th:text="${game.description}"></div>
         </div>
-        <h5 style="padding: 5px" th:text="${game.releaseDate}"></h5>
-        <div class="inside" th:text="${game.description}"></div>
-
     </div>
 
     <div class="card">

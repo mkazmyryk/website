@@ -15,7 +15,7 @@
 
     <a href="/feed"><h1>TOPGAMES </h1></a>
 
-    <div class="account">
+    <div id="account">
 
         <p th:inline="text">Hello <a href="/account"><b>[[${#httpServletRequest.remoteUser}]]</b></a>
         </p>
@@ -45,16 +45,8 @@
 
         <a th:href="@{/game/} + ${game.title}"><h3 th:text="${game.title}"></h3></a>
         <div class="inside">
-            <div id="title">
-                <div id="logo">
-                    <img alt="logo" th:src="${game.imageLink}"/>
-                </div>
-                <div class="rating">
-                    <h1 th:text="${#numbers.formatDecimal(game.avrRating,1,1,'POINT')}"></h1>
-                </div>
-            </div>
+            <div th:insert="/game.html :: div.title"></div>
         </div>
-
         <span style="margin: 5px"><b>Release Date:</b></span>
         <span style="padding: 5px" th:text="${game.releaseDate}"></span>
         <div class="inside" th:text="${game.description}"></div>
