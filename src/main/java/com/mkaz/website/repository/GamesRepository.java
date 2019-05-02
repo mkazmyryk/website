@@ -25,4 +25,6 @@ public interface GamesRepository extends JpaRepository<Game, Long> {
 
     Page<Game> findAllByReleaseDateAfter(String date, Pageable pageable);
 
+    Page<Game> findAllByTitleContainingIgnoreCase(String containing, Pageable pageable);
+
 }

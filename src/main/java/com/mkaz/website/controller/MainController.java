@@ -148,8 +148,7 @@ public class MainController {
                             @RequestParam("size") Optional<Integer> size, @RequestParam("title") String title) {
         currentPage = page.orElse(1);
         pageSize = size.orElse(10);
-
-        games = gamesRepository.findAllByTitle(title,
+        games = gamesRepository.findAllByTitleContainingIgnoreCase(title,
                 PageRequest.of(currentPage - 1, pageSize));
 
         model.addAttribute("platforms", Platform.values());
