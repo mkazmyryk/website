@@ -49,4 +49,10 @@ public class AdminController {
         return "redirect:/admin";
     }
 
+    @GetMapping("/admin/delete")
+    public String deleteGame(Model model, String title) {
+        model.addAttribute("title", title);
+        return "delete";
+    }
+
 }

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/2005/Atom">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete</title>
+    <link rel="stylesheet" th:href="@{/css/feed.css}"/>
+    <link rel="stylesheet" th:href="@{/css/add.css}"/>
+</head>
+<body>
+<div th:insert="feed :: div.header"></div>
+
+<div th:insert="feed :: div.topnav"></div>
+
+<div class="content">
+
+    <div class="card">
+        <h2 style="padding: 10px">Adding review</h2>
+
+        <div class="inside" style="text-align: center">
+            <span>Do you want delete game:<b th:text="${title}"></b> ?</span>
+            <form method="post" style="margin: 5px" th:action="@{delete}">
+                <input th:attr="name='title'" th:value="${title}" type="hidden">
+                <input type="submit" value="Delete">
+            </form>
+            <form method="get" style="margin: 5px" th:action="@{'/game/'+ ${title}}">
+                <input type="submit" value="Back">
+            </form>
+        </div>
+
+    </div>
+
+</div>
+
+<div th:insert="feed :: div.footer"></div>
+
+</body>
+</html>

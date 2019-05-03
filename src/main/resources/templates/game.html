@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/2005/Atom">
+<html lang="en" xmlns:sec="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/2005/Atom">
 <head>
     <meta charset="UTF-8">
     <title th:text="${game.title}">Title</title>
@@ -65,9 +65,17 @@
 
     <div class="card">
         <div class="inside">
-            <form method="get" th:action="@{/review}">
+            <form method="get" style="margin: 5px" th:action="@{/review}">
                 <input th:attr="name='title'" th:value="${game.title}" type="hidden">
                 <input type="submit" value="AddReview">
+            </form>
+            <form method="get" sec:authorize="hasRole('ADMIN')" style="margin: 5px" th:action="@{/admin/delete}">
+                <input th:attr="name='title'" th:value="${game.title}" type="hidden">
+                <input type="submit" value="Delete">
+            </form>
+            <form method="get" sec:authorize="hasRole('ADMIN')" style="margin: 5px" th:action="@{/admin/edit}">
+                <input th:attr="name='title'" th:value="${game.title}" type="hidden">
+                <input type="submit" value="Edit">
             </form>
         </div>
     </div>
