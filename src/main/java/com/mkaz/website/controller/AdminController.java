@@ -72,7 +72,7 @@ public class AdminController {
             reviewsRepository.delete(tempReview);
         }
         gamesRepository.deleteByTitle(title);
-        return "feed";
+        return "redirect:/feed";
     }
 
 }
