@@ -161,3 +161,10 @@ input[type=submit]:hover {
 .pageNumbers {
     margin: 12px;
 }
+
+.card h3 {
+    font-family: "Trebuchet MS";
+    font-size: 18px;
+    text-align: center;
+    text-shadow: 0 0 3px cornflowerblue;
+}
