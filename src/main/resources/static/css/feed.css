@@ -131,6 +131,21 @@ input[type=submit]:hover {
     background-color: rgba(65, 88, 130, 0.77);
 }
 
+input[type=reset] {
+    background-color: rgba(76, 113, 155, 0.77);
+    color: white;
+    padding: 2px 15px;
+    border: none;
+    cursor: pointer;
+    opacity: 0.9;
+    border-radius: 10px;
+}
+
+input[type=reset]:hover {
+    opacity: 1;
+    background-color: rgba(65, 88, 130, 0.77);
+}
+
 .links {
     background-color: whitesmoke;
     border-radius: 10px;
