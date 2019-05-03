@@ -2,19 +2,17 @@
 <html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
 
 <head>
-
     <title>Topgames</title>
     <link rel="stylesheet" th:href="@{/css/feed.css}"/>
     <link rel="stylesheet" th:href="@{/css/game.css}"/>
-
 </head>
 
 <body>
 
 <div class="header">
-
-    <a href="/feed"><h1>TOPGAMES </h1></a>
-
+    <a href="/feed"><img alt="logo" height="50" th:src="@{/images/icon.png}" width="50"/></a>
+    <h1>TOPGAMES </h1><br>
+    <span>Most powerful information about games in one place!</span>
     <div id="account">
 
         <p th:inline="text">Hello <a href="/account"><b>[[${#httpServletRequest.remoteUser}]]</b></a>
@@ -25,7 +23,6 @@
 
     </div>
 
-    <span>Most powerful information about games in one place!</span>
 
 </div>
 
