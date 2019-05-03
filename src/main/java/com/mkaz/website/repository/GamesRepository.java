@@ -27,4 +27,6 @@ public interface GamesRepository extends JpaRepository<Game, Long> {
 
     Page<Game> findAllByTitleContainingIgnoreCase(String containing, Pageable pageable);
 
+    Integer deleteByTitle(String title);
+
 }
