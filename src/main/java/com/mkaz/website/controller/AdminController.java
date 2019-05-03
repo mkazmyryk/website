@@ -35,7 +35,7 @@ public class AdminController {
         try {
             byte[] bytes = file.getBytes();
             BufferedOutputStream stream =
-                    new BufferedOutputStream(new FileOutputStream(new File("static/images/"
+                    new BufferedOutputStream(new FileOutputStream(new File("./static/images/"
                             + file.getOriginalFilename())));
             stream.write(bytes);
             stream.close();
