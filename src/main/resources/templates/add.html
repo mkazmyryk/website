@@ -16,7 +16,7 @@
 
         <div class="inside">
 
-            <form enctype="multipart/form-data" method="post" th:action="@{/add}" th:object="${game}">
+            <form enctype="multipart/form-data" method="post" th:action="@{add}" th:object="${game}">
                 <label>Title:
                     <input th:field="*{title}" type="text"/>
                 </label>

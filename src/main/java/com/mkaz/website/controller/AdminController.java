@@ -22,7 +22,7 @@ public class AdminController {
     @Autowired
     private GamesRepository gamesRepository;
 
-    @GetMapping("/add")
+    @GetMapping("/admin/add")
     public String addGameForm(Model model) {
         model.addAttribute("platforms", Platform.values());
         model.addAttribute("genres", Genre.values());
@@ -30,7 +30,7 @@ public class AdminController {
         return "add";
     }
 
-    @PostMapping("/add")
+    @PostMapping("/admin/add")
     public String addGame(Game game, @RequestParam("logo") MultipartFile file) {
         try {
             byte[] bytes = file.getBytes();
