@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<html lang="en" xmlns:sec="http://www.w3.org/1999/xhtml" xmlns:th="http://www.w3.org/1999/xhtml">
 
 <head>
     <title>Topgames</title>
@@ -8,13 +8,12 @@
 </head>
 
 <body>
-<div>
 <div class="header">
     <a href="/feed"><img alt="logo" height="50" th:src="@{/images/icon.png}" width="50"/></a>
     <h1>TOPGAMES </h1>
     <div id="account">
 
-        <p th:inline="text">Hello <a href="/account"><b>[[${#httpServletRequest.remoteUser}]]</b></a>
+        <p th:inline="text">Hello <a href="/account"><b sec:authentication="name"></b></a>
         </p>
         <form method="post" th:action="@{/logout}">
             <input style="margin: 5px" type="submit" value="Sign Out"/>
@@ -24,7 +23,6 @@
     <br>
     <span>Most powerful information about games in one place!</span>
 </div>
-</div>
 
 <div class="topnav">
 
@@ -33,7 +31,7 @@
     <a href="/soon">Coming soon</a>
     <a href="/search">Find</a>
     <a href="#" style="float:right">About</a>
-    <a href="/admin" style="float:right">Admin</a>
+    <a href="/admin" sec:authorize="hasRole('ADMIN')" style="float:right">Admin</a>
 
 </div>
 <div class="content">
