@@ -8,11 +8,10 @@
 </head>
 
 <body>
-
+<div>
 <div class="header">
     <a href="/feed"><img alt="logo" height="50" th:src="@{/images/icon.png}" width="50"/></a>
-    <h1>TOPGAMES </h1><br>
-    <span>Most powerful information about games in one place!</span>
+    <h1>TOPGAMES </h1>
     <div id="account">
 
         <p th:inline="text">Hello <a href="/account"><b>[[${#httpServletRequest.remoteUser}]]</b></a>
@@ -22,8 +21,9 @@
         </form>
 
     </div>
-
-
+    <br>
+    <span>Most powerful information about games in one place!</span>
+</div>
 </div>
 
 <div class="topnav">

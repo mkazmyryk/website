@@ -29,8 +29,7 @@ body {
     background: rgba(81, 140, 187, 0.77);
     font-family: SansSerif, serif;
     padding: 10px;
-    display: inline-block;
-    width: 100%;
+
 }
 
 .header a {
@@ -94,15 +93,14 @@ body {
 }
 
 #account {
-    background-color: white;
+    background-color: #e1e1e1;
     border-radius: 5px;
     text-align: center;
     color: black;
     padding: 5px;
     width: 150px;
-    position: absolute;
-    right: 5px;
-    top: 6px;
+    display: inline-block;
+    float: right;
 }
 
 #account a:link {
