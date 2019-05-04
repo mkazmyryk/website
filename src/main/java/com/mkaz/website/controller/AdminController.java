@@ -6,6 +6,7 @@ import com.mkaz.website.entity.Platform;
 import com.mkaz.website.entity.Review;
 import com.mkaz.website.repository.GamesRepository;
 import com.mkaz.website.repository.ReviewsRepository;
+import com.mkaz.website.service.AmazonS3Service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
@@ -43,16 +44,21 @@ public class AdminController {
     public String addGame(Game game, @RequestParam("logo") MultipartFile file) {
         try {
             byte[] bytes = file.getBytes();
+
+            File tempFile = new File("./tmp/"
+                    + file.getOriginalFilename());
+
             BufferedOutputStream stream =
-                    new BufferedOutputStream(new FileOutputStream(new File("./static/images/"
-                            + file.getOriginalFilename())));
+                    new BufferedOutputStream(new FileOutputStream(tempFile));
             stream.write(bytes);
             stream.close();
+
+            AmazonS3Service.uploadFile(tempFile);
 
         } catch (IOException e) {
             e.printStackTrace();
         }
-        game.setImageLink("/images/" + file.getOriginalFilename());
+        game.setImageLink(AmazonS3Service.getURL(file.getOriginalFilename()));
         game.setAvrRating(0.0);
         gamesRepository.save(game);
         return "redirect:/admin";
