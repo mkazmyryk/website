@@ -117,7 +117,7 @@ body {
 }
 
 input[type=submit] {
-    background-color: rgba(76, 113, 155, 0.77);
+    background-color: rgb(27, 38, 126);
     color: white;
     padding: 2px 15px;
     border: none;
@@ -132,7 +132,7 @@ input[type=submit]:hover {
 }
 
 input[type=reset] {
-    background-color: rgba(76, 113, 155, 0.77);
+    background-color: rgb(27, 38, 126);
     color: white;
     padding: 2px 15px;
     border: none;
