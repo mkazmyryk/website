@@ -7,22 +7,22 @@ import org.springframework.beans.factory.annotation.Autowired;
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
-public class EmailExistValidator implements ConstraintValidator<EmailExistValidation, String> {
+public class UserNameExistValidator implements ConstraintValidator<UserNameExistValidation, String> {
     @Autowired
     private UserRepository userRepository;
 
     @Override
-    public boolean isValid(String email, ConstraintValidatorContext context) {
-        return emailExistValide(email);
+    public boolean isValid(String username, ConstraintValidatorContext context) {
+        return userNameValidate(username);
     }
 
     @Override
-    public void initialize(EmailExistValidation constraintAnnotation) {
+    public void initialize(UserNameExistValidation constraintAnnotation) {
 
     }
 
-    private boolean emailExistValide(String email) {
-        User user = userRepository.findByEmailIgnoreCase(email);
+    private boolean userNameValidate(String username) {
+        User user = userRepository.findByUserNameIgnoreCase(username);
         if (user != null) {
             return false;
         }

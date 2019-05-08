@@ -2,6 +2,7 @@ package com.mkaz.topgames.entity;
 
 import com.mkaz.topgames.validation.EmailExistValidation;
 import com.mkaz.topgames.validation.EmailValidation;
+import com.mkaz.topgames.validation.UserNameExistValidation;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
@@ -29,6 +30,7 @@ public class User {
     @NotNull
     @NotEmpty
     @Size(min = 3, max = 20)
+    @UserNameExistValidation
     @Column(name = "user_name", nullable = false)
     private String userName;
     @NotNull
