@@ -1,5 +1,6 @@
 package com.mkaz.topgames.entity;
 
+import com.mkaz.topgames.validation.EmailExistValidation;
 import com.mkaz.topgames.validation.EmailValidation;
 
 import javax.persistence.*;
@@ -17,27 +18,28 @@ public class User {
     private Long user_id;
     @NotNull
     @NotEmpty
-    @Size(min = 2, max = 10)
+    @Size(min = 2, max = 20)
     @Column(name = "first_name", nullable = false)
     private String firstName;
     @NotNull
     @NotEmpty
-    @Size(min = 2, max = 10)
+    @Size(min = 2, max = 20)
     @Column(name = "last_name", nullable = false)
     private String lastName;
     @NotNull
     @NotEmpty
-    @Size(min = 3, max = 10)
+    @Size(min = 3, max = 20)
     @Column(name = "user_name", nullable = false)
     private String userName;
     @NotNull
     @NotEmpty
     @EmailValidation
+    @EmailExistValidation
     @Column(name = "email", nullable = false)
     private String email;
     @NotNull
     @NotEmpty
-    @Size(min = 6, max = 40)
+    @Size(min = 6, max = 100)
     @Column(name = "password", nullable = false)
     private String password;
     @Column(name = "enabled")

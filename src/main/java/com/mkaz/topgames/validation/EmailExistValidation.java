@@ -1,5 +1,6 @@
 package com.mkaz.topgames.validation;
 
+
 import javax.validation.Constraint;
 import javax.validation.Payload;
 import java.lang.annotation.Documented;
@@ -11,10 +12,10 @@ import static java.lang.annotation.RetentionPolicy.RUNTIME;
 
 @Target({TYPE, FIELD, ANNOTATION_TYPE})
 @Retention(RUNTIME)
-@Constraint(validatedBy = EmailValidator.class)
+@Constraint(validatedBy = EmailExistValidator.class)
 @Documented
-public @interface EmailValidation {
-    String message() default "Invalid Email";
+public @interface EmailExistValidation {
+    String message() default "Email exists";
 
     Class<?>[] groups() default {};
 
