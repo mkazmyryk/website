@@ -1,5 +1,5 @@
-2019-03-21 08:29:29.868  INFO 1772 --- [restartedMain] com.mkaz.website.WebsiteApplication      : Starting WebsiteApplication on WD140 with PID 1772 (C:\Users\Kazmyryk.M\IdeaProjects\website\target\classes started by Kazmyryk.M in C:\Users\Kazmyryk.M\IdeaProjects\website)
-2019-03-21 08:29:29.868  INFO 1772 --- [restartedMain] com.mkaz.website.WebsiteApplication      : No active profile set, falling back to default profiles: default
+2019-03-21 08:29:29.868  INFO 1772 --- [restartedMain] com.mkaz.topgames.WebsiteApplication      : Starting WebsiteApplication on WD140 with PID 1772 (C:\Users\Kazmyryk.M\IdeaProjects\website\target\classes started by Kazmyryk.M in C:\Users\Kazmyryk.M\IdeaProjects\website)
+2019-03-21 08:29:29.868  INFO 1772 --- [restartedMain] com.mkaz.topgames.WebsiteApplication      : No active profile set, falling back to default profiles: default
 2019-03-21 08:29:29.899  INFO 1772 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
 2019-03-21 08:29:29.899  INFO 1772 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
 2019-03-21 08:29:30.367  INFO 1772 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
@@ -28,12 +28,12 @@
 2019-03-21 08:29:32.458  INFO 1772 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
 2019-03-21 08:29:32.489  WARN 1772 --- [restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
 2019-03-21 08:29:32.645  INFO 1772 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2019-03-21 08:29:32.645  INFO 1772 --- [restartedMain] com.mkaz.website.WebsiteApplication      : Started WebsiteApplication in 2.98 seconds (JVM running for 6.64)
+2019-03-21 08:29:32.645  INFO 1772 --- [restartedMain] com.mkaz.topgames.WebsiteApplication      : Started WebsiteApplication in 2.98 seconds (JVM running for 6.64)
 2019-03-21 08:29:37.681  INFO 1772 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
 2019-03-21 08:29:37.682  INFO 1772 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2019-03-21 08:29:37.687  INFO 1772 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
-2019-03-21 08:53:33.614  INFO 6536 --- [restartedMain] com.mkaz.website.WebsiteApplication      : Starting WebsiteApplication on WD140 with PID 6536 (C:\Users\Kazmyryk.M\IdeaProjects\website\target\classes started by Kazmyryk.M in C:\Users\Kazmyryk.M\IdeaProjects\website)
-2019-03-21 08:53:33.614  INFO 6536 --- [restartedMain] com.mkaz.website.WebsiteApplication      : No active profile set, falling back to default profiles: default
+2019-03-21 08:53:33.614  INFO 6536 --- [restartedMain] com.mkaz.topgames.WebsiteApplication      : Starting WebsiteApplication on WD140 with PID 6536 (C:\Users\Kazmyryk.M\IdeaProjects\website\target\classes started by Kazmyryk.M in C:\Users\Kazmyryk.M\IdeaProjects\website)
+2019-03-21 08:53:33.614  INFO 6536 --- [restartedMain] com.mkaz.topgames.WebsiteApplication      : No active profile set, falling back to default profiles: default
 2019-03-21 08:53:33.646  INFO 6536 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
 2019-03-21 08:53:33.646  INFO 6536 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
 2019-03-21 08:53:34.082  INFO 6536 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
@@ -62,12 +62,12 @@
 2019-03-21 08:53:36.188  INFO 6536 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
 2019-03-21 08:53:36.220  WARN 6536 --- [restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
 2019-03-21 08:53:36.391  INFO 6536 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2019-03-21 08:53:36.391  INFO 6536 --- [restartedMain] com.mkaz.website.WebsiteApplication      : Started WebsiteApplication in 2.995 seconds (JVM running for 6.563)
+2019-03-21 08:53:36.391  INFO 6536 --- [restartedMain] com.mkaz.topgames.WebsiteApplication      : Started WebsiteApplication in 2.995 seconds (JVM running for 6.563)
 2019-03-21 08:53:46.558  INFO 6536 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
 2019-03-21 08:53:46.558  INFO 6536 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2019-03-21 08:53:46.564  INFO 6536 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
-2019-03-21 08:58:11.458  INFO 2364 --- [restartedMain] com.mkaz.website.WebsiteApplication      : Starting WebsiteApplication on WD140 with PID 2364 (C:\Users\Kazmyryk.M\IdeaProjects\website\target\classes started by Kazmyryk.M in C:\Users\Kazmyryk.M\IdeaProjects\website)
-2019-03-21 08:58:11.458  INFO 2364 --- [restartedMain] com.mkaz.website.WebsiteApplication      : No active profile set, falling back to default profiles: default
+2019-03-21 08:58:11.458  INFO 2364 --- [restartedMain] com.mkaz.topgames.WebsiteApplication      : Starting WebsiteApplication on WD140 with PID 2364 (C:\Users\Kazmyryk.M\IdeaProjects\website\target\classes started by Kazmyryk.M in C:\Users\Kazmyryk.M\IdeaProjects\website)
+2019-03-21 08:58:11.458  INFO 2364 --- [restartedMain] com.mkaz.topgames.WebsiteApplication      : No active profile set, falling back to default profiles: default
 2019-03-21 08:58:11.489  INFO 2364 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
 2019-03-21 08:58:11.489  INFO 2364 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
 2019-03-21 08:58:11.926  INFO 2364 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
@@ -96,12 +96,12 @@
 2019-03-21 08:58:14.017  INFO 2364 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
 2019-03-21 08:58:14.049  WARN 2364 --- [restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
 2019-03-21 08:58:14.205  INFO 2364 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2019-03-21 08:58:14.205  INFO 2364 --- [restartedMain] com.mkaz.website.WebsiteApplication      : Started WebsiteApplication in 2.968 seconds (JVM running for 6.534)
+2019-03-21 08:58:14.205  INFO 2364 --- [restartedMain] com.mkaz.topgames.WebsiteApplication      : Started WebsiteApplication in 2.968 seconds (JVM running for 6.534)
 2019-03-21 08:58:19.627  INFO 2364 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
 2019-03-21 08:58:19.628  INFO 2364 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2019-03-21 08:58:19.633  INFO 2364 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
-2019-03-21 09:02:39.694  INFO 4320 --- [restartedMain] com.mkaz.website.WebsiteApplication      : Starting WebsiteApplication on WD140 with PID 4320 (C:\Users\Kazmyryk.M\IdeaProjects\website\target\classes started by Kazmyryk.M in C:\Users\Kazmyryk.M\IdeaProjects\website)
-2019-03-21 09:02:39.694  INFO 4320 --- [restartedMain] com.mkaz.website.WebsiteApplication      : No active profile set, falling back to default profiles: default
+2019-03-21 09:02:39.694  INFO 4320 --- [restartedMain] com.mkaz.topgames.WebsiteApplication      : Starting WebsiteApplication on WD140 with PID 4320 (C:\Users\Kazmyryk.M\IdeaProjects\website\target\classes started by Kazmyryk.M in C:\Users\Kazmyryk.M\IdeaProjects\website)
+2019-03-21 09:02:39.694  INFO 4320 --- [restartedMain] com.mkaz.topgames.WebsiteApplication      : No active profile set, falling back to default profiles: default
 2019-03-21 09:02:39.725  INFO 4320 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
 2019-03-21 09:02:39.725  INFO 4320 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
 2019-03-21 09:02:40.193  INFO 4320 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
@@ -130,12 +130,12 @@
 2019-03-21 09:02:42.315  INFO 4320 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
 2019-03-21 09:02:42.346  WARN 4320 --- [restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
 2019-03-21 09:02:42.502  INFO 4320 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2019-03-21 09:02:42.502  INFO 4320 --- [restartedMain] com.mkaz.website.WebsiteApplication      : Started WebsiteApplication in 3.011 seconds (JVM running for 6.605)
+2019-03-21 09:02:42.502  INFO 4320 --- [restartedMain] com.mkaz.topgames.WebsiteApplication      : Started WebsiteApplication in 3.011 seconds (JVM running for 6.605)
 2019-03-21 09:02:48.755  INFO 4320 --- [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
 2019-03-21 09:02:48.756  INFO 4320 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2019-03-21 09:02:48.762  INFO 4320 --- [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 6 ms
-2019-03-21 09:06:20.418  INFO 3608 --- [restartedMain] com.mkaz.website.WebsiteApplication      : Starting WebsiteApplication on WD140 with PID 3608 (C:\Users\Kazmyryk.M\IdeaProjects\website\target\classes started by Kazmyryk.M in C:\Users\Kazmyryk.M\IdeaProjects\website)
-2019-03-21 09:06:20.418  INFO 3608 --- [restartedMain] com.mkaz.website.WebsiteApplication      : No active profile set, falling back to default profiles: default
+2019-03-21 09:06:20.418  INFO 3608 --- [restartedMain] com.mkaz.topgames.WebsiteApplication      : Starting WebsiteApplication on WD140 with PID 3608 (C:\Users\Kazmyryk.M\IdeaProjects\website\target\classes started by Kazmyryk.M in C:\Users\Kazmyryk.M\IdeaProjects\website)
+2019-03-21 09:06:20.418  INFO 3608 --- [restartedMain] com.mkaz.topgames.WebsiteApplication      : No active profile set, falling back to default profiles: default
 2019-03-21 09:06:20.434  INFO 3608 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
 2019-03-21 09:06:20.434  INFO 3608 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
 2019-03-21 09:06:20.886  INFO 3608 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data repositories in DEFAULT mode.
@@ -164,4 +164,4 @@
 2019-03-21 09:06:22.961  INFO 3608 --- [restartedMain] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
 2019-03-21 09:06:22.992  WARN 3608 --- [restartedMain] aWebConfiguration$JpaWebMvcConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
 2019-03-21 09:06:23.132  INFO 3608 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
-2019-03-21 09:06:23.148  INFO 3608 --- [restartedMain] com.mkaz.website.WebsiteApplication      : Started WebsiteApplication in 2.965 seconds (JVM running for 6.551)
+2019-03-21 09:06:23.148  INFO 3608 --- [restartedMain] com.mkaz.topgames.WebsiteApplication      : Started WebsiteApplication in 2.965 seconds (JVM running for 6.551)

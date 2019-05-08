@@ -1,6 +1,6 @@
-package com.mkaz.website.repository;
+package com.mkaz.topgames.repository;
 
-import com.mkaz.website.entity.User;
+import com.mkaz.topgames.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface UserRepository extends JpaRepository<User, String> {

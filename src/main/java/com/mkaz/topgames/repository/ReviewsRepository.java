@@ -1,7 +1,7 @@
-package com.mkaz.website.repository;
+package com.mkaz.topgames.repository;
 
-import com.mkaz.website.entity.Review;
-import com.mkaz.website.entity.User;
+import com.mkaz.topgames.entity.Review;
+import com.mkaz.topgames.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface ReviewsRepository extends JpaRepository<Review, Long> {

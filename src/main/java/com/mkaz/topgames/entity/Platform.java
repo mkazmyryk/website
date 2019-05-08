@@ -1,4 +1,4 @@
-package com.mkaz.website.entity;
+package com.mkaz.topgames.entity;
 
 public enum Platform {
     ALL,

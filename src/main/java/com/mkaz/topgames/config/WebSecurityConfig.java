@@ -1,4 +1,4 @@
-package com.mkaz.website.config;
+package com.mkaz.topgames.config;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;

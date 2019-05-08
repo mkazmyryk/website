@@ -1,9 +1,9 @@
-package com.mkaz.website.controller;
+package com.mkaz.topgames.controller;
 
-import com.mkaz.website.entity.Game;
-import com.mkaz.website.entity.Genre;
-import com.mkaz.website.entity.Platform;
-import com.mkaz.website.repository.GamesRepository;
+import com.mkaz.topgames.entity.Game;
+import com.mkaz.topgames.entity.Genre;
+import com.mkaz.topgames.entity.Platform;
+import com.mkaz.topgames.repository.GamesRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;

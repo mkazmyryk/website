@@ -1,9 +1,9 @@
-package com.mkaz.website.controller;
+package com.mkaz.topgames.controller;
 
-import com.mkaz.website.entity.Role;
-import com.mkaz.website.entity.User;
-import com.mkaz.website.repository.RolesRepository;
-import com.mkaz.website.repository.UserRepository;
+import com.mkaz.topgames.entity.Role;
+import com.mkaz.topgames.entity.User;
+import com.mkaz.topgames.repository.RolesRepository;
+import com.mkaz.topgames.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;

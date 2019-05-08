@@ -1,4 +1,4 @@
-package com.mkaz.website.service;
+package com.mkaz.topgames.service;
 
 
 import com.amazonaws.AmazonServiceException;
@@ -7,13 +7,8 @@ import com.amazonaws.auth.BasicAWSCredentials;
 import com.amazonaws.regions.Region;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3Client;
-import com.amazonaws.services.s3.model.S3Object;
-import com.amazonaws.services.s3.model.S3ObjectInputStream;
 
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
 
 /**
  * @author mkazmyryk
