@@ -1,6 +1,9 @@
 package com.mkaz.topgames.entity;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -18,6 +21,9 @@ public class User {
     private String userName;
     @Column(name = "email", nullable = false)
     private String email;
+    @NotNull
+    @NotEmpty
+    @Size(min = 6)
     @Column(name = "password", nullable = false)
     private String password;
     @Column(name = "enabled")
