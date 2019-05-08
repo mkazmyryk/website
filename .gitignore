@@ -5,3 +5,6 @@
 *.ipr
 *.cmd
 .mvn
+
+/src/main/resources/
+*.properties
