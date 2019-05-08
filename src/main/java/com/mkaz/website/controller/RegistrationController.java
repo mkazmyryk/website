@@ -44,8 +44,8 @@ public class RegistrationController {
             role.setName("ROLE_USER");
             role.getUsers().add(user);
             user.getRoles().add(role);
+            rolesRepository.save(role);
         }
-        rolesRepository.save(role);
         userRepository.save(user);
         return "redirect:/login";
     }
