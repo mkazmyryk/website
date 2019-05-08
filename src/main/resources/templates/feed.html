@@ -39,10 +39,11 @@
 
     <div class="card" th:each="game: ${games}">
 
-        <a th:href="@{/game/} + ${game.title}"><h3 th:text="${game.title}"></h3></a>
-        <div class="inside">
-            <div th:insert="game :: div.title"></div>
-        </div>
+        <a th:href="@{/game/} + ${game.title}"><h3 th:text="${game.title}"></h3>
+            <div class="inside">
+                <div th:insert="game :: div.title"></div>
+            </div>
+        </a>
         <span style="margin: 5px"><b>Release Date:</b></span>
         <span style="padding: 5px" th:text="${game.releaseDate}"></span>
         <div class="inside" th:text="${game.description}"></div>
