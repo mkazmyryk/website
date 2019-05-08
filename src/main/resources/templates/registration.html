@@ -27,7 +27,8 @@
 
         <label><b>Password</b></label>
         <input placeholder="Enter Password" required th:field="*{password}" type="password">
-        <p th:errors="*{password}" th:if="${#fields.hasErrors('password')}">Password error</p>
+        <p th:each="error: ${#fields.errors('password')}"
+           th:text="${error}">Validation error</p>
         <button type="submit" class="registerbtn">Register</button>
     </div>
 
