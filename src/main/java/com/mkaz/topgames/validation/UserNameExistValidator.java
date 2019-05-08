@@ -8,8 +8,15 @@ import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
 public class UserNameExistValidator implements ConstraintValidator<UserNameExistValidation, String> {
-    @Autowired
     private UserRepository userRepository;
+
+    public UserNameExistValidator() {
+    }
+
+    @Autowired
+    public UserNameExistValidator(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
 
     @Override
     public boolean isValid(String username, ConstraintValidatorContext context) {
@@ -22,10 +29,10 @@ public class UserNameExistValidator implements ConstraintValidator<UserNameExist
     }
 
     private boolean userNameValidate(String username) {
-        User user = userRepository.findByUserNameIgnoreCase(username);
-        if (user != null) {
-            return false;
+        if (userRepository == null) {
+            return true;
         }
-        return true;
+        User user = userRepository.findByUserNameIgnoreCase(username);
+        return user == null;
     }
 }
