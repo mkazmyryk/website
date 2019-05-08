@@ -1,5 +1,7 @@
 package com.mkaz.topgames.entity;
 
+import com.mkaz.topgames.validation.EmailValidation;
+
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
@@ -13,17 +15,29 @@ public class User {
     @Id
     @GeneratedValue
     private Long user_id;
+    @NotNull
+    @NotEmpty
+    @Size(min = 2, max = 10)
     @Column(name = "first_name", nullable = false)
     private String firstName;
+    @NotNull
+    @NotEmpty
+    @Size(min = 2, max = 10)
     @Column(name = "last_name", nullable = false)
     private String lastName;
+    @NotNull
+    @NotEmpty
+    @Size(min = 3, max = 10)
     @Column(name = "user_name", nullable = false)
     private String userName;
+    @NotNull
+    @NotEmpty
+    @EmailValidation
     @Column(name = "email", nullable = false)
     private String email;
     @NotNull
     @NotEmpty
-    @Size(min = 6)
+    @Size(min = 6, max = 40)
     @Column(name = "password", nullable = false)
     private String password;
     @Column(name = "enabled")
