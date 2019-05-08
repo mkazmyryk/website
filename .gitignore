@@ -1,3 +1,5 @@
+*.properties
+
 /target/
 .idea
 *.iws
@@ -5,6 +7,3 @@
 *.ipr
 *.cmd
 .mvn
-
-/src/main/resources/
-*.properties
