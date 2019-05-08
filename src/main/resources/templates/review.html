@@ -20,7 +20,9 @@
 
             <form method="post" style="text-align: center" th:action="@{/review}" th:object="${review}">
                 <label>
+                    <span>Rating: <b>0</b></span>
                     <input max="10" min="0" name="points" th:field="${review.rating}" type="range">
+                    <span><b>10</b></span>
                 </label><br>
                 <label>Review:
                     <textarea rows="15" th:field="${review.text}"></textarea>
