@@ -1,5 +1,6 @@
 package com.mkaz.topgames.entity;
 
+import com.mkaz.topgames.service.ColorService;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -26,11 +27,6 @@ public class Review {
     }
 
     public String getColor() {
-        if (rating <= 5) {
-            return "red";
-        } else {
-            if (rating > 5 && rating <= 8) return "#eaec00";
-        }
-        return "lawngreen";
+        return ColorService.getColor(rating);
     }
 }

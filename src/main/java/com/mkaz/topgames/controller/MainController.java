@@ -9,6 +9,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -35,7 +36,7 @@ public class MainController {
     }
 
 
-    @GetMapping("/feed")
+    @GetMapping(produces = MediaType.TEXT_HTML_VALUE, value = "/feed")
     public String gamesForFeed(Model model,
                                @RequestParam("page") Optional<Integer> page,
                                @RequestParam("size") Optional<Integer> size) {
@@ -55,6 +56,28 @@ public class MainController {
 
         return "feed";
     }
+
+//    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE, value = "/feed")
+//    @ResponseBody
+//    public Page<Game> gamesForFeedREST(Model model,
+//                                       @RequestParam("page") Optional<Integer> page,
+//                                       @RequestParam("size") Optional<Integer> size) {
+//
+//        currentPage = page.orElse(1);
+//        pageSize = size.orElse(5);
+//
+//        games = gamesRepository.findAll(PageRequest.of(currentPage - 1, pageSize));
+//
+//        model.addAttribute("games", games);
+//
+//        totalPages = countPages(gamesRepository, pageSize);
+//
+//        if (totalPages > 1) {
+//            model.addAttribute("pageNumbers", getPageNumbers(totalPages));
+//        }
+//
+//        return games;
+//    }
 
     @GetMapping("/best")
     public String bestGames(Model model, @RequestParam("page") Optional<Integer> page,

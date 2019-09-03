@@ -23,7 +23,8 @@ public class GamesController {
     private final UserRepository userRepository;
 
     @Autowired
-    public GamesController(GamesRepository gamesRepository, ReviewsRepository reviewsRepository, UserRepository userRepository) {
+    public GamesController(GamesRepository gamesRepository, ReviewsRepository reviewsRepository,
+                           UserRepository userRepository) {
         this.gamesRepository = gamesRepository;
         this.reviewsRepository = reviewsRepository;
         this.userRepository = userRepository;

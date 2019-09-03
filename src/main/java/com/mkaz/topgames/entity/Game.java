@@ -1,5 +1,6 @@
 package com.mkaz.topgames.entity;
 
+import com.mkaz.topgames.service.ColorService;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -39,10 +40,6 @@ public class Game {
     @OneToMany
     private List<Review> reviews = new ArrayList<>();
 
-    public Double getAverageRating() {
-        return avrRating;
-    }
-
     public void addReview(Review review) {
         reviews.add(review);
         Double sum = 0.0;
@@ -57,23 +54,7 @@ public class Game {
     }
 
     public String getColor() {
-        if (avrRating <= 5) {
-            return "red";
-        } else {
-            if (avrRating > 5 && avrRating <= 8) return "#eaec00";
-        }
-        return "lawngreen";
+        return ColorService.getColor(avrRating);
     }
 
-    @Override
-    public String toString() {
-        return "Game{" +
-                "id=" + id +
-                ", title='" + title + '\'' +
-                ", description='" + description + '\'' +
-                ", releaseDate='" + releaseDate + '\'' +
-                ", genre='" + genre + '\'' +
-                ", platform='" + platform + '\'' +
-                '}';
-    }
 }

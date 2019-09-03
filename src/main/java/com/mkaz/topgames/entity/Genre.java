@@ -5,5 +5,5 @@ public enum Genre {
     ACTION,
     RPG,
     RACING,
-    MMO;
+    MMO
 }

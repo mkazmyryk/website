@@ -6,5 +6,5 @@ public enum Platform {
     PS4,
     XBOX,
     ANDROID,
-    IOS;
+    IOS
 }
